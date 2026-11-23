@@ -22,7 +22,7 @@ def head(title, description):
 <meta name="description" content="{description}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 """
@@ -31,11 +31,11 @@ def header(active):
     links = []
     for href, label in NAV:
         cls = ' class="active"' if href == active else ''
-        links.append(f'<a href="/{href}"{cls}>{label}</a>')
+        links.append(f'<a href="{href}"{cls}>{label}</a>')
     links_html = "\n        ".join(links)
     return f"""<header class="site-header">
   <div class="container nav-row">
-    <a href="/index.html" class="brand">
+    <a href="index.html" class="brand">
       <div class="brand-mark">SB</div>
       <div class="brand-text">
         <span class="name">Sharp Brains</span>
@@ -46,7 +46,7 @@ def header(active):
     <nav class="nav-links">
         {links_html}
     </nav>
-    <a href="/admissions.html" class="btn btn-amber">Book a Tour</a>
+    <a href="admissions.html" class="btn btn-amber">Book a Tour</a>
   </div>
 </header>
 """
@@ -58,8 +58,8 @@ FOOTER = """<section class="cta-band">
       <p>Book a campus tour or apply online in minutes.</p>
     </div>
     <div class="cta-buttons">
-      <a href="/contact.html" class="btn btn-navy">Book a Tour</a>
-      <a href="/admissions.html" class="btn btn-white">Apply Now</a>
+      <a href="contact.html" class="btn btn-navy">Book a Tour</a>
+      <a href="admissions.html" class="btn btn-white">Apply Now</a>
     </div>
   </div>
 </section>
@@ -76,16 +76,16 @@ FOOTER = """<section class="cta-band">
       </div>
       <div class="footer-col">
         <h4>QUICK LINKS</h4>
-        <a href="/about.html">About</a>
-        <a href="/academics.html">Academics</a>
-        <a href="/admissions.html">Admissions</a>
-        <a href="/gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="gallery.html">Gallery</a>
       </div>
       <div class="footer-col">
         <h4>MORE</h4>
-        <a href="/staff.html">Our Staff</a>
-        <a href="/news.html">News &amp; Events</a>
-        <a href="/contact.html">Contact</a>
+        <a href="staff.html">Our Staff</a>
+        <a href="news.html">News &amp; Events</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>CONTACT</h4>
@@ -104,7 +104,7 @@ FOOTER = """<section class="cta-band">
     </div>
   </div>
 </footer>
-<script src="/assets/main.js"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
 """
@@ -125,8 +125,8 @@ home_body = """
       <h1 style="font-size:50px;font-weight:800;line-height:1.12;color:#fff;">Where Sharp Minds Are Built &mdash; From First Steps to WAEC</h1>
       <p style="font-size:18px;line-height:1.6;color:#C7CCE6;max-width:540px;">Sharp Brains Schools nurtures confident, curious learners from Nursery through Senior Secondary, with a strong record of WAEC &amp; NECO results and a safe, structured environment parents trust.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
-        <a href="/admissions.html" class="btn btn-amber">Apply for Admission</a>
-        <a href="/academics.html" class="btn btn-outline-light">Explore Our Programs</a>
+        <a href="admissions.html" class="btn btn-amber">Apply for Admission</a>
+        <a href="academics.html" class="btn btn-outline-light">Explore Our Programs</a>
       </div>
       <div class="stat-row">
         <div class="stat"><span class="num">[18]+</span><span class="label">Years of Excellence</span></div>
@@ -162,21 +162,21 @@ home_body = """
         <h3 style="font-size:20px;">Nursery</h3>
         <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">Ages [2] &ndash; [5]</p>
         <p class="muted" style="font-size:14px;">Play-based early learning that builds language, motor skills, and social confidence.</p>
-        <a href="/academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
+        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
       </div>
       <div class="card">
         <div class="card-icon" style="background:#E7EAFB;">&#128218;</div>
         <h3 style="font-size:20px;">Primary</h3>
         <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">Primary 1 &ndash; 6</p>
         <p class="muted" style="font-size:14px;">A strong foundation in literacy, numeracy, and science, plus character-building activities.</p>
-        <a href="/academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
+        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
       </div>
       <div class="card">
         <div class="card-icon" style="background:#DEE9FF;">&#127891;</div>
         <h3 style="font-size:20px;">Secondary</h3>
         <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">JSS1 &ndash; JSS3 &middot; SSS1 &ndash; SSS3</p>
         <p class="muted" style="font-size:14px;">Rigorous WAEC/NECO-aligned teaching across Science, Arts, and Commercial streams.</p>
-        <a href="/academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
+        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
       </div>
     </div>
   </div>
@@ -264,7 +264,7 @@ about_body = """
     <div class="section-head">
       <span class="eyebrow-dark">LEADERSHIP</span>
       <h2>Led by Educators Who Care</h2>
-      <p class="muted">Meet the people guiding Sharp Brains day to day. <a href="/staff.html" style="color:var(--indigo);font-weight:700;">See the full staff directory &rarr;</a></p>
+      <p class="muted">Meet the people guiding Sharp Brains day to day. <a href="staff.html" style="color:var(--indigo);font-weight:700;">See the full staff directory &rarr;</a></p>
     </div>
     <div class="grid grid-4">
       <div style="display:flex;flex-direction:column;gap:12px;">
@@ -449,7 +449,7 @@ admissions_body = """
       </div>
     </div>
     <div style="padding-top:24px;text-align:center;">
-      <a href="/contact.html" class="btn btn-amber">Request Full Fee Schedule</a>
+      <a href="contact.html" class="btn btn-amber">Request Full Fee Schedule</a>
     </div>
   </div>
 </section>
