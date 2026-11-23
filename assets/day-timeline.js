@@ -38,6 +38,22 @@
     cards.addEventListener("scroll", setFromScroll, { passive: true });
     window.addEventListener("resize", setFromScroll);
 
+    // Hovering a horizontally-scrolling strip can make some browsers turn a
+    // plain vertical mouse-wheel scroll into horizontal movement of the
+    // strip, trapping the page. Keep vertical wheel scrolling the page, and
+    // only let a clearly horizontal gesture (shift+wheel, trackpad swipe)
+    // move the cards.
+    cards.addEventListener(
+      "wheel",
+      function (e) {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          window.scrollBy(0, e.deltaY);
+        }
+      },
+      { passive: false }
+    );
+
     track.addEventListener("click", function (e) {
       if (e.target === scrubber) return;
       scrollToPct(pctFromClientX(e.clientX), true);
