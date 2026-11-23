@@ -36,10 +36,10 @@ def header(active):
     return f"""<header class="site-header">
   <div class="container nav-row">
     <a href="index.html" class="brand">
-      <div class="brand-mark">SB</div>
+      <img src="assets/logo.jpg" alt="Sharp Brain International Schools logo" class="brand-mark">
       <div class="brand-text">
         <span class="name">Sharp Brains</span>
-        <span class="sub">SCHOOLS</span>
+        <span class="sub">INTERNATIONAL SCHOOLS</span>
       </div>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
@@ -69,7 +69,7 @@ FOOTER = """<section class="cta-band">
     <div class="footer-cols">
       <div class="footer-col">
         <div class="brand">
-          <div class="brand-mark" style="width:38px;height:38px;font-size:15px;">SB</div>
+          <img src="assets/logo.jpg" alt="Sharp Brain International Schools logo" class="brand-mark" style="width:38px;height:38px;">
           <span style="font-family:'Poppins';font-weight:700;font-size:17px;color:#fff;">Sharp Brains</span>
         </div>
         <p style="font-size:13px;line-height:1.6;color:#8890AD;">Nurturing sharp minds from Nursery through Senior Secondary in [City, State], Nigeria.</p>
@@ -541,12 +541,43 @@ EXCURSION_PHOTOS = [
     "assets/gallery/trip-08-bamboo-forest-b.jpg",
     "assets/gallery/trip-09-pond-lineup.jpg",
     "assets/gallery/trip-10-badagry-monument.jpg",
+    "assets/gallery/trip-11-horse-ride-b.jpg",
+    "assets/gallery/trip-12-horse-ride-c.jpg",
+    "assets/gallery/trip-13-horse-ride-d.jpg",
+    "assets/gallery/trip-14-boat-ride-a.jpg",
+    "assets/gallery/trip-15-boat-ride-b.jpg",
+    "assets/gallery/trip-16-boat-ride-c.jpg",
 ]
 
 CELEBRATION_PHOTOS = [
     "assets/gallery/event-democracy-day-1.jpg",
     "assets/gallery/event-democracy-day-2.jpg",
     "assets/gallery/event-democracy-day-3.jpg",
+]
+
+CULTURE_PHOTOS = [
+    "assets/gallery/culture-01-group-gate.jpg",
+    "assets/gallery/culture-02-four-girls.jpg",
+    "assets/gallery/culture-03-studio-girl.jpg",
+    "assets/gallery/culture-04-group-indoor.jpg",
+    "assets/gallery/culture-05-dance.jpg",
+]
+
+GRADUATION_PHOTOS = [
+    "assets/gallery/grad-01-boys-native.jpg",
+    "assets/gallery/grad-02-girl-sash.jpg",
+    "assets/gallery/grad-03-boys-group.jpg",
+    "assets/gallery/grad-04-girls-purple.jpg",
+]
+
+SPORTS_PHOTOS = [
+    "assets/gallery/sports-01-pool.jpg",
+    "assets/gallery/sports-02-house-trophy.jpg",
+]
+
+STAFF_CANDID_PHOTOS = [
+    "assets/gallery/staff-01-gallery-visit.jpg",
+    "assets/gallery/staff-02-beach.jpg",
 ]
 
 gallery_body = f"""
@@ -606,6 +637,24 @@ gallery_body = f"""
 
 <section class="section section-alt">
   <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Cultural Day</h2>
+    <div class="grid grid-3">
+      {photo_grid(CULTURE_PHOTOS, "Sharp Brains students in traditional attire on Cultural Day")}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Graduation Day</h2>
+    <div class="grid grid-4">
+      {photo_grid(GRADUATION_PHOTOS, "Sharp Brains graduation day")}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Campus &amp; Classrooms</h2>
     <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>
     <div class="grid grid-4">
@@ -617,9 +666,17 @@ gallery_body = f"""
 <section class="section">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Sports &amp; Activities</h2>
-    <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>
-    <div class="grid grid-4">
-      {gallery_grid(4, colors)}
+    <div class="grid grid-3">
+      {photo_grid(SPORTS_PHOTOS, "Sharp Brains students in sports and pool activities")}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Our Team, In Action</h2>
+    <div class="grid grid-3">
+      {photo_grid(STAFF_CANDID_PHOTOS, "Sharp Brains staff on an excursion")}
     </div>
   </div>
 </section>

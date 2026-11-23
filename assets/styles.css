@@ -66,11 +66,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .brand { display: flex; align-items: center; gap: 10px; }
 
 .brand-mark {
-  width: 42px; height: 42px; border-radius: 11px;
-  background: linear-gradient(135deg, var(--indigo), var(--navy));
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #fff;
   display: flex; align-items: center; justify-content: center;
   color: #fff; font-family: 'Poppins'; font-weight: 800; font-size: 17px;
   flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }

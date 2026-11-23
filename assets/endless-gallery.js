@@ -19,7 +19,10 @@
     'assets/gallery/trip-08-bamboo-forest-a.jpg',
     'assets/gallery/trip-08-bamboo-forest-b.jpg',
     'assets/gallery/trip-09-pond-lineup.jpg',
-    null, null
+    'assets/gallery/culture-05-dance.jpg',
+    'assets/gallery/grad-03-boys-group.jpg',
+    'assets/gallery/trip-14-boat-ride-a.jpg',
+    'assets/gallery/culture-01-group-gate.jpg'
   ];
 
   var PLACEHOLDER_COLORS = ['#2E3A8C', '#3F4FB0', '#1C2563', '#4452A6'];
