@@ -5,12 +5,29 @@ import os
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 NAV = [
-    ("about.html", "About"),
-    ("academics.html", "Academics"),
-    ("admissions.html", "Admissions"),
-    ("gallery.html", "Gallery"),
-    ("contact.html", "Contact"),
+    ("index.html", "Home", "home", "#3B82F6"),
+    ("about.html", "About", "info", "#F97316"),
+    ("academics.html", "Academics", "book", "#22C55E"),
+    ("admissions.html", "Admissions", "file", "#EF4444"),
+    ("gallery.html", "Gallery", "image", "#8B5CF6"),
+    ("contact.html", "Contact", "mail", "#06B6D4"),
 ]
+
+# Minimal lucide-style icon paths (24x24, stroke=currentColor) for the glow nav.
+NAV_ICONS = {
+    "home": '<path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9.5Z"/>',
+    "info": '<circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+    "book": '<path d="M12 7c-2-2-5-2-8-2v13c3 0 6 0 8 2 2-2 5-2 8-2V5c-3 0-6 0-8 2Z"/><path d="M12 7v13"/>',
+    "file": '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/>',
+    "image": '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
+    "mail": '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>',
+}
+
+def nav_icon_svg(key):
+    return (
+        f'<svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+        f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{NAV_ICONS[key]}</svg>'
+    )
 
 def head(title, description):
     return f"""<!doctype html>
@@ -29,9 +46,14 @@ def head(title, description):
 
 def header(active):
     links = []
-    for href, label in NAV:
-        cls = ' class="active"' if href == active else ''
-        links.append(f'<a href="{href}"{cls}>{label}</a>')
+    for href, label, icon_key, color in NAV:
+        cls = ' active' if href == active else ''
+        glow = f"radial-gradient(circle, {color}33 0%, {color}14 50%, transparent 100%)"
+        style = f'style="--glow:{glow};--accent:{color};"'
+        links.append(
+            f'<a href="{href}" class="glow-link{cls}" {style}>'
+            f'{nav_icon_svg(icon_key)}<span>{label}</span></a>'
+        )
     links_html = "\n        ".join(links)
     return f"""<header class="site-header">
   <div class="container nav-row">
@@ -43,7 +65,7 @@ def header(active):
       </div>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-    <nav class="nav-links">
+    <nav class="nav-links glow-nav">
         {links_html}
     </nav>
     <a href="admissions.html" class="btn btn-amber">Book a Tour</a>
