@@ -560,6 +560,34 @@ gallery_body = f"""
 
 <section class="section">
   <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Videos</h2>
+    <div class="grid grid-2">
+      <div class="video-card">
+        <video controls preload="metadata" poster="assets/videos/video-01-poster.jpg">
+          <source src="assets/videos/video-01.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" poster="assets/videos/video-02-poster.jpg">
+          <source src="assets/videos/video-02.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" poster="assets/videos/video-03-poster.jpg">
+          <source src="assets/videos/video-03.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-card">
+        <video controls preload="metadata" poster="assets/videos/video-04-poster.jpg">
+          <source src="assets/videos/video-04.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Educational Excursions</h2>
     <div class="grid grid-4">
       {photo_grid(EXCURSION_PHOTOS, "Sharp Brains students on an educational excursion")}
@@ -567,7 +595,7 @@ gallery_body = f"""
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Celebrations</h2>
     <div class="grid grid-3">
@@ -576,7 +604,7 @@ gallery_body = f"""
   </div>
 </section>
 
-<section class="section">
+<section class="section section-alt">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Campus &amp; Classrooms</h2>
     <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>
@@ -586,7 +614,7 @@ gallery_body = f"""
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Sports &amp; Activities</h2>
     <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>

@@ -216,6 +216,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .gallery-item { aspect-ratio: 1/1; border-radius: 14px; }
 
+.video-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+.video-card video {
+  width: 100%;
+  display: block;
+  max-height: 460px;
+  background: #000;
+}
+
 /* ---------- Forms ---------- */
 
 .field { display: flex; flex-direction: column; gap: 6px; }
