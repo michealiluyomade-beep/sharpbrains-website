@@ -9,8 +9,17 @@
  */
 (function () {
   var PHOTO_URLS = [
-    null, null, null, null, null, null,
-    null, null, null, null, null, null
+    'assets/gallery/trip-01-museum-group.jpg',
+    'assets/gallery/trip-02-horse-ride.jpg',
+    'assets/gallery/trip-03-badagry-gate.jpg',
+    'assets/gallery/trip-04-baracoon-group.jpg',
+    'assets/gallery/trip-05-beach-group.jpg',
+    'assets/gallery/trip-06-aquarium-visit.jpg',
+    'assets/gallery/trip-07-indoor-group.jpg',
+    'assets/gallery/trip-08-bamboo-forest-a.jpg',
+    'assets/gallery/trip-08-bamboo-forest-b.jpg',
+    'assets/gallery/trip-09-pond-lineup.jpg',
+    null, null
   ];
 
   var PLACEHOLDER_COLORS = ['#2E3A8C', '#3F4FB0', '#1C2563', '#4452A6'];

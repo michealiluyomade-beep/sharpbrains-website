@@ -135,7 +135,7 @@ home_body = """
       </div>
     </div>
     <div class="hero-art">
-      <div class="placeholder-block" style="width:100%;aspect-ratio:4/3;">[ Photo: students &amp; campus ]</div>
+      <img src="assets/gallery/trip-03-badagry-gate.jpg" alt="Sharp Brains students on an educational excursion" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:1px solid rgba(255,255,255,0.15);">
     </div>
   </div>
 </section>
@@ -521,20 +521,65 @@ def gallery_grid(n, colors):
         items.append(f'<div class="gallery-item" style="background:{c};display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:12px;font-weight:600;">[Photo]</div>')
     return "\n      ".join(items)
 
+def photo_grid(paths, alt):
+    items = []
+    for p in paths:
+        items.append(f'<div class="gallery-item" style="overflow:hidden;"><img src="{p}" alt="{alt}" style="width:100%;height:100%;object-fit:cover;"></div>')
+    return "\n      ".join(items)
+
 colors = ["#E7EAFB", "#DEE9FF", "#FDF1DC"]
+
+EXCURSION_PHOTOS = [
+    "assets/gallery/trip-01-museum-group.jpg",
+    "assets/gallery/trip-02-horse-ride.jpg",
+    "assets/gallery/trip-03-badagry-gate.jpg",
+    "assets/gallery/trip-04-baracoon-group.jpg",
+    "assets/gallery/trip-05-beach-group.jpg",
+    "assets/gallery/trip-06-aquarium-visit.jpg",
+    "assets/gallery/trip-07-indoor-group.jpg",
+    "assets/gallery/trip-08-bamboo-forest-a.jpg",
+    "assets/gallery/trip-08-bamboo-forest-b.jpg",
+    "assets/gallery/trip-09-pond-lineup.jpg",
+    "assets/gallery/trip-10-badagry-monument.jpg",
+]
+
+CELEBRATION_PHOTOS = [
+    "assets/gallery/event-democracy-day-1.jpg",
+    "assets/gallery/event-democracy-day-2.jpg",
+    "assets/gallery/event-democracy-day-3.jpg",
+]
 
 gallery_body = f"""
 <section class="page-banner">
   <div class="container">
     <span class="eyebrow">GALLERY</span>
     <h1 style="color:#fff;font-size:40px;font-weight:800;padding-top:12px;">Life at Sharp Brains</h1>
-    <p style="color:#C7CCE6;max-width:560px;padding-top:12px;font-size:16px;">A look at our campus, classrooms, and student life. Replace these placeholders with real photos.</p>
+    <p style="color:#C7CCE6;max-width:560px;padding-top:12px;font-size:16px;">Excursions, celebrations, and everyday moments from around the school.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Educational Excursions</h2>
+    <div class="grid grid-4">
+      {photo_grid(EXCURSION_PHOTOS, "Sharp Brains students on an educational excursion")}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 style="font-size:22px;padding-bottom:24px;">Celebrations</h2>
+    <div class="grid grid-3">
+      {photo_grid(CELEBRATION_PHOTOS, "Sharp Brains students celebrating Democracy Day")}
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Campus &amp; Classrooms</h2>
+    <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>
     <div class="grid grid-4">
       {gallery_grid(4, colors)}
     </div>
@@ -544,15 +589,7 @@ gallery_body = f"""
 <section class="section section-alt">
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Sports &amp; Activities</h2>
-    <div class="grid grid-4">
-      {gallery_grid(4, colors)}
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 style="font-size:22px;padding-bottom:24px;">Events &amp; Celebrations</h2>
+    <p class="muted" style="padding-bottom:24px;">More photos coming soon.</p>
     <div class="grid grid-4">
       {gallery_grid(4, colors)}
     </div>
@@ -640,10 +677,13 @@ news_body = """
 
 <section class="section">
   <div class="container grid grid-3">
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <img src="assets/gallery/event-democracy-day-1.jpg" alt="Sharp Brains Democracy Day celebration" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+      <div style="padding:24px;">
+        <span class="tag">June 12</span>
+        <h3 style="font-size:17px;padding-top:10px;">Happy Democracy Day, Nigeria!</h3>
+        <p class="muted" style="font-size:14px;">Students marked Democracy Day with a celebration of freedom, unity, and the power of every voice &mdash; one nation, one future.</p>
+      </div>
     </div>
     <div class="card">
       <span class="tag">[Date]</span>
