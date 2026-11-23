@@ -311,6 +311,77 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cta-band p { font-size: 14px; color: #5A4312; }
 .cta-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* ---------- Day timeline (scrubber + scrolling hour cards) ---------- */
+
+.day-timeline-labels {
+  display: flex; justify-content: space-between;
+  font-size: 13px; font-weight: 700; color: var(--muted-2);
+  padding-bottom: 10px;
+}
+
+.day-track {
+  position: relative;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 11px 36px;
+  cursor: pointer;
+}
+
+.day-track-fill {
+  position: absolute; top: 0; left: 0; height: 100%;
+  width: 0%;
+  background: var(--amber);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.day-scrubber {
+  position: absolute; top: 50%; left: 0%;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--amber);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 10px rgba(17,25,63,0.2), 0 0 0 1px var(--border);
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  touch-action: none;
+}
+.day-scrubber:active { cursor: grabbing; }
+
+.day-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 14px;
+  margin: 0 -4px;
+  scrollbar-width: thin;
+}
+.day-cards::-webkit-scrollbar { height: 6px; }
+.day-cards::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.day-card {
+  scroll-snap-align: start;
+  flex: 0 0 240px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(20,24,60,0.05);
+}
+.day-card-time {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; color: var(--amber-dark);
+}
+.day-card-time .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.day-card h3 { font-size: 18px; padding-top: 10px; }
+.day-card p { font-size: 13px; padding-top: 8px; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .day-card { flex-basis: 210px; }
+}
+
 /* ---------- Endless gallery (3D photo corridor) ---------- */
 
 .endless-root {
