@@ -109,8 +109,8 @@ FOOTER = """<section class="cta-band">
 </html>
 """
 
-def write_page(filename, title, description, active, body):
-    content = head(title, description) + header(active) + body + FOOTER
+def write_page(filename, title, description, active, body, extra_scripts=""):
+    content = head(title, description) + header(active) + body + extra_scripts + FOOTER
     with open(os.path.join(ROOT, filename), "w") as f:
         f.write(content)
     print(f"wrote {filename}")
@@ -222,9 +222,33 @@ home_body = """
     </div>
   </div>
 </section>
+
+<section style="background:#000;">
+  <div class="container" style="padding-top:64px;padding-bottom:24px;">
+    <span class="eyebrow-dark" style="color:var(--amber);">(04) GALLERY PREVIEW</span>
+    <h2 style="color:#fff;font-size:32px;font-weight:800;padding-top:12px;">Life at Sharp Brains, in Motion</h2>
+    <p style="color:#9BA3C9;max-width:560px;padding-top:10px;font-size:15px;">A running look at campus life. Panels below are placeholders &mdash; swap in real photos any time.</p>
+  </div>
+  <div class="endless-root" aria-label="Scrolling photo gallery of Sharp Brains Schools">
+    <div class="endless-scene">
+      <div class="endless-world"></div>
+    </div>
+    <div class="endless-footer">
+      <p class="endless-caption">See the full gallery &rarr;</p>
+    </div>
+  </div>
+  <div style="text-align:center;padding:32px;">
+    <a href="gallery.html" class="btn btn-amber">View Full Gallery</a>
+  </div>
+</section>
 """
 
-write_page("index.html", "Home", "Sharp Brains Schools — Nursery, Primary & Secondary education in Nigeria.", "", home_body)
+HOME_EXTRA_SCRIPTS = """
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/endless-gallery.js"></script>
+"""
+
+write_page("index.html", "Home", "Sharp Brains Schools — Nursery, Primary & Secondary education in Nigeria.", "", home_body, extra_scripts=HOME_EXTRA_SCRIPTS)
 
 # ------------------------------------------------------------- ABOUT ----
 
