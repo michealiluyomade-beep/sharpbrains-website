@@ -96,7 +96,7 @@ FOOTER = """<section class="cta-split">
           <img src="assets/logo.jpg" alt="Sharp Brain International Schools logo" class="brand-mark" style="width:38px;height:38px;">
           <span style="font-family:'Poppins';font-weight:700;font-size:17px;color:#fff;">Sharp Brains</span>
         </div>
-        <p style="font-size:13px;line-height:1.6;color:#8890AD;">Nurturing sharp minds from Nursery through Senior Secondary in [City, State], Nigeria.</p>
+        <p style="font-size:13px;line-height:1.6;color:#8890AD;">Nurturing sharp minds from Nursery through Senior Secondary in Ikosi Ketu, Lagos, Nigeria.</p>
       </div>
       <div class="footer-col">
         <h4>QUICK LINKS</h4>
@@ -113,16 +113,16 @@ FOOTER = """<section class="cta-split">
       </div>
       <div class="footer-col">
         <h4>CONTACT</h4>
-        <span>[School Address], [City], Nigeria</span>
-        <span>[+234 XXX XXX XXXX] (Call/WhatsApp)</span>
-        <span>[info@sharpbrains.sch.ng]</span>
+        <span>3 Aina Road, Ikosi Ketu, Agiliti Mile 12, Lagos, Nigeria</span>
+        <span>0803 344 4284 (Call/WhatsApp)</span>
+        <span>trustodih334@gmail.com</span>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; [2026] Sharp Brains Schools. All rights reserved.</span>
       <div class="social-row">
         <span>Instagram</span>
-        <span>Facebook</span>
+        <a href="https://www.facebook.com/p/SharpBrains-Intl-College-100043473537283/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Facebook</a>
         <span>WhatsApp</span>
       </div>
     </div>
@@ -167,7 +167,7 @@ home_body = f"""
 
 <section style="background:#fff;border-bottom:1px solid var(--border);">
   <div class="container" style="padding:32px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;">
-    <div style="display:flex;align-items:center;gap:10px;flex:1 1 200px;"><span style="font-size:20px;">&#127963;&#65039;</span><span style="font-weight:600;font-size:14px;color:#353D5C;">[State] Ministry of Education Approved</span></div>
+    <div style="display:flex;align-items:center;gap:10px;flex:1 1 200px;"><span style="font-size:20px;">&#127963;&#65039;</span><span style="font-weight:600;font-size:14px;color:#353D5C;">Lagos State Ministry of Education Approved</span></div>
     <div style="display:flex;align-items:center;gap:10px;flex:1 1 200px;"><span style="font-size:20px;">&#128221;</span><span style="font-weight:600;font-size:14px;color:#353D5C;">WAEC &amp; NECO Registered Centre</span></div>
     <div style="display:flex;align-items:center;gap:10px;flex:1 1 200px;"><span style="font-size:20px;">&#128105;&#8205;&#127979;</span><span style="font-weight:600;font-size:14px;color:#353D5C;">[15]:1 Student&ndash;Teacher Ratio</span></div>
     <div style="display:flex;align-items:center;gap:10px;flex:1 1 200px;"><span style="font-size:20px;">&#128737;&#65039;</span><span style="font-weight:600;font-size:14px;color:#353D5C;">CCTV-Monitored, Secure Campus</span></div>
@@ -435,7 +435,7 @@ about_body = """
       <h2>Recognized &amp; Trusted</h2>
     </div>
     <div class="grid grid-3">
-      <div class="card sm">&#127963;&#65039; <strong>[State] Ministry of Education</strong> &mdash; Approved and licensed.</div>
+      <div class="card sm">&#127963;&#65039; <strong>Lagos State Ministry of Education</strong> &mdash; Approved and licensed.</div>
       <div class="card sm">&#128221; <strong>WAEC &amp; NECO</strong> &mdash; Registered examination centre.</div>
       <div class="card sm">&#127942; <strong>[Award/Body Name]</strong> &mdash; [Placeholder recognition or membership.]</div>
     </div>
@@ -828,15 +828,15 @@ contact_body = """
     <div style="display:flex;flex-direction:column;gap:24px;">
       <div class="card sm">
         <h3 style="font-size:16px;">&#128205; Address</h3>
-        <p class="muted" style="font-size:14px;padding-top:6px;">[School Address], [City], [State], Nigeria</p>
+        <p class="muted" style="font-size:14px;padding-top:6px;">3 Aina Road, Ikosi Ketu, Agiliti Mile 12, Lagos, Nigeria</p>
       </div>
       <div class="card sm">
         <h3 style="font-size:16px;">&#128222; Phone / WhatsApp</h3>
-        <p class="muted" style="font-size:14px;padding-top:6px;">[+234 XXX XXX XXXX]</p>
+        <p class="muted" style="font-size:14px;padding-top:6px;">0803 344 4284</p>
       </div>
       <div class="card sm">
         <h3 style="font-size:16px;">&#9993;&#65039; Email</h3>
-        <p class="muted" style="font-size:14px;padding-top:6px;">[info@sharpbrains.sch.ng]</p>
+        <p class="muted" style="font-size:14px;padding-top:6px;">trustodih334@gmail.com</p>
       </div>
       <div class="card sm">
         <h3 style="font-size:16px;">&#128337; Office Hours</h3>
