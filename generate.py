@@ -76,7 +76,7 @@ def header(active):
 
 FOOTER = """<section class="cta-split">
   <div class="cta-split-photo">
-    <img src="assets/gallery/culture-03-studio-girl.jpg" alt="Sharp Brains pupil">
+    <img src="assets/gallery/cutout-cultural-day-girl.png" alt="Sharp Brains pupil in traditional Cultural Day attire">
   </div>
   <div class="container cta-split-inner">
     <div class="cta-split-text">

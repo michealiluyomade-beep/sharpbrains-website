@@ -305,13 +305,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   clip-path: polygon(0 0, 42% 0, 27% 100%, 0 100%);
 }
 .cta-split-photo {
-  position: absolute; z-index: 2; left: max(24px, calc((100% - 1120px) / 2 + 24px));
-  bottom: 0; top: 36px;
-  width: 230px;
+  position: absolute; z-index: 2; left: max(10px, calc((100% - 1120px) / 2 - 10px));
+  bottom: 0; top: 24px;
+  width: 260px;
 }
 .cta-split-photo img {
-  width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;
-  box-shadow: 0 24px 48px -18px rgba(17,25,63,0.3);
+  width: 100%; height: 100%; object-fit: contain; object-position: bottom center;
+  filter: drop-shadow(0 20px 28px rgba(17,25,63,0.28));
 }
 .cta-split-inner { position: relative; z-index: 1; }
 .cta-split-text { margin-left: 280px; max-width: 540px; }
