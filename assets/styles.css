@@ -372,7 +372,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-pill-light:hover { background: rgba(255,255,255,0.85); }
 
 .hero-photo-wrap {
-  position: absolute; z-index: 2; right: 7%; bottom: 0;
+  position: absolute; z-index: 2; left: 50%; bottom: 0;
+  transform: translateX(-50%);
   width: 30%; max-width: 360px; min-width: 200px;
   border-radius: 28px 28px 0 0;
   overflow: hidden;
