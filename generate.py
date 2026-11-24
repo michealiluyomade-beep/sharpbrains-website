@@ -159,7 +159,7 @@ home_body = f"""
         <div class="stat"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
       </div>
     </div>
-    <div class="hero-art">
+    <div class="hero-art" data-tilt data-tilt-max="8">
       <img src="assets/gallery/trip-03-badagry-gate.jpg" alt="Sharp Brains students on an educational excursion" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:1px solid rgba(255,255,255,0.15);">
     </div>
   </div>
@@ -182,7 +182,7 @@ home_body = f"""
       <p class="muted">From a child's very first day in Nursery to their final WAEC exam, every level is built to carry learners confidently into the next.</p>
     </div>
     <div class="grid grid-3">
-      <a href="academics.html" class="notch-card">
+      <a href="academics.html" class="notch-card" data-tilt>
         <div class="notch-cover">
           <img src="assets/gallery/sports-01-pool.jpg" alt="Sharp Brains Nursery pupils at play">
           <div class="notch-badge"><span>Ages [2] &ndash; [5]</span></div>
@@ -195,7 +195,7 @@ home_body = f"""
         <p class="muted notch-desc">Play-based early learning that builds language, motor skills, and social confidence.</p>
         <div class="notch-tags"><span class="notch-tag">Play-Based</span><span class="notch-tag">Early Years</span></div>
       </a>
-      <a href="academics.html" class="notch-card">
+      <a href="academics.html" class="notch-card" data-tilt>
         <div class="notch-cover">
           <img src="assets/gallery/trip-07-indoor-group.jpg" alt="Sharp Brains Primary pupils on an excursion">
           <div class="notch-badge"><span>Primary 1 &ndash; 6</span></div>
@@ -208,7 +208,7 @@ home_body = f"""
         <p class="muted notch-desc">A strong foundation in literacy, numeracy, and science, plus character-building activities.</p>
         <div class="notch-tags"><span class="notch-tag">Literacy</span><span class="notch-tag">Numeracy</span></div>
       </a>
-      <a href="academics.html" class="notch-card">
+      <a href="academics.html" class="notch-card" data-tilt>
         <div class="notch-cover">
           <img src="assets/gallery/grad-03-boys-group.jpg" alt="Sharp Brains Secondary students">
           <div class="notch-badge"><span>JSS1&ndash;JSS3 &middot; SSS1&ndash;SSS3</span></div>
@@ -359,6 +359,7 @@ HOME_EXTRA_SCRIPTS = """
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="assets/endless-gallery.js"></script>
 <script src="assets/day-timeline.js"></script>
+<script src="assets/tilt-3d.js"></script>
 """
 
 write_page("index.html", "Home", "Sharp Brains Schools — Nursery, Primary & Secondary education in Nigeria.", "", home_body, extra_scripts=HOME_EXTRA_SCRIPTS)

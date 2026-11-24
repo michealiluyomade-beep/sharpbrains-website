@@ -673,6 +673,54 @@ ul { margin: 0; padding: 0; list-style: none; }
   .endless-root { height: 420px; }
 }
 
+/* ---------- 3D tilt ---------- */
+
+[data-tilt] {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
+  will-change: transform;
+}
+
+[data-tilt].notch-card { transform-origin: center; }
+
+[data-tilt] .tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+[data-tilt].tilt-active .tilt-glare { opacity: 1; }
+
+[data-tilt] > * { transform: translateZ(0); }
+
+.notch-card.tilt-active .notch-cover,
+.notch-card.tilt-active h3,
+.notch-card.tilt-active .notch-desc,
+.notch-card.tilt-active .notch-tags {
+  transform: translateZ(28px);
+}
+
+.notch-card .notch-cover,
+.notch-card h3,
+.notch-card .notch-desc,
+.notch-card .notch-tags {
+  transition: transform 0.12s ease-out;
+}
+
+.hero-art.tilt-active img { transform: translateZ(20px) scale(1.02); }
+.hero-art img { transition: transform 0.12s ease-out; }
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  [data-tilt] { transform: none !important; transition: none !important; }
+  [data-tilt] .tilt-glare { display: none; }
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
