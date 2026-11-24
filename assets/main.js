@@ -10,24 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // FAQ accordion
-  var faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(function (item) {
-    var question = item.querySelector('.faq-q');
-    if (!question) return;
-    question.addEventListener('click', function () {
-      var isOpen = item.classList.contains('open');
-      faqItems.forEach(function (i) { i.classList.remove('open'); });
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-      faqItems.forEach(function (i) {
-        var symbol = i.querySelector('.faq-symbol');
-        if (symbol) symbol.textContent = i.classList.contains('open') ? '−' : '+';
-      });
-    });
-  });
-
   // Inquiry form (contact page) — placeholder submit handler.
   // Replace this with a real endpoint (GoHighLevel form action, Formspree, etc.) before going live.
   var form = document.querySelector('#inquiry-form');
