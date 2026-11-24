@@ -21,6 +21,7 @@ NAV_ICONS = {
     "file": '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/>',
     "image": '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
     "mail": '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/>',
+    "arrow": '<path d="M7 17 17 7"/><path d="M7 7h10v10"/>',
 }
 
 def nav_icon_svg(key):
@@ -139,7 +140,7 @@ def write_page(filename, title, description, active, body, extra_scripts=""):
 
 # ---------------------------------------------------------------- HOME ----
 
-home_body = """
+home_body = f"""
 <section class="hero">
   <div class="container hero-flex">
     <div class="hero-copy">
@@ -179,27 +180,45 @@ home_body = """
       <p class="muted">From a child's very first day in Nursery to their final WAEC exam, every level is built to carry learners confidently into the next.</p>
     </div>
     <div class="grid grid-3">
-      <div class="card">
-        <div class="card-icon" style="background:#FDF1DC;">&#129698;</div>
-        <h3 style="font-size:20px;">Nursery</h3>
-        <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">Ages [2] &ndash; [5]</p>
-        <p class="muted" style="font-size:14px;">Play-based early learning that builds language, motor skills, and social confidence.</p>
-        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="background:#E7EAFB;">&#128218;</div>
-        <h3 style="font-size:20px;">Primary</h3>
-        <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">Primary 1 &ndash; 6</p>
-        <p class="muted" style="font-size:14px;">A strong foundation in literacy, numeracy, and science, plus character-building activities.</p>
-        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="background:#DEE9FF;">&#127891;</div>
-        <h3 style="font-size:20px;">Secondary</h3>
-        <p style="font-size:13px;font-weight:700;color:var(--amber-dark);">JSS1 &ndash; JSS3 &middot; SSS1 &ndash; SSS3</p>
-        <p class="muted" style="font-size:14px;">Rigorous WAEC/NECO-aligned teaching across Science, Arts, and Commercial streams.</p>
-        <a href="academics.html" style="font-weight:700;font-size:14px;color:var(--indigo);">Learn more &rarr;</a>
-      </div>
+      <a href="academics.html" class="notch-card">
+        <div class="notch-cover">
+          <img src="assets/gallery/sports-01-pool.jpg" alt="Sharp Brains Nursery pupils at play">
+          <div class="notch-badge"><span>Ages [2] &ndash; [5]</span></div>
+          <div class="notch-cut"></div>
+          <div class="notch-fillet a"></div>
+          <div class="notch-fillet b"></div>
+          <span class="notch-arrow">{nav_icon_svg('arrow')}</span>
+        </div>
+        <h3>Nursery</h3>
+        <p class="muted notch-desc">Play-based early learning that builds language, motor skills, and social confidence.</p>
+        <div class="notch-tags"><span class="notch-tag">Play-Based</span><span class="notch-tag">Early Years</span></div>
+      </a>
+      <a href="academics.html" class="notch-card">
+        <div class="notch-cover">
+          <img src="assets/gallery/trip-07-indoor-group.jpg" alt="Sharp Brains Primary pupils on an excursion">
+          <div class="notch-badge"><span>Primary 1 &ndash; 6</span></div>
+          <div class="notch-cut"></div>
+          <div class="notch-fillet a"></div>
+          <div class="notch-fillet b"></div>
+          <span class="notch-arrow">{nav_icon_svg('arrow')}</span>
+        </div>
+        <h3>Primary</h3>
+        <p class="muted notch-desc">A strong foundation in literacy, numeracy, and science, plus character-building activities.</p>
+        <div class="notch-tags"><span class="notch-tag">Literacy</span><span class="notch-tag">Numeracy</span></div>
+      </a>
+      <a href="academics.html" class="notch-card">
+        <div class="notch-cover">
+          <img src="assets/gallery/grad-03-boys-group.jpg" alt="Sharp Brains Secondary students">
+          <div class="notch-badge"><span>JSS1&ndash;JSS3 &middot; SSS1&ndash;SSS3</span></div>
+          <div class="notch-cut"></div>
+          <div class="notch-fillet a"></div>
+          <div class="notch-fillet b"></div>
+          <span class="notch-arrow">{nav_icon_svg('arrow')}</span>
+        </div>
+        <h3>Secondary</h3>
+        <p class="muted notch-desc">Rigorous WAEC/NECO-aligned teaching across Science, Arts, and Commercial streams.</p>
+        <div class="notch-tags"><span class="notch-tag">WAEC / NECO</span><span class="notch-tag">3 Streams</span></div>
+      </a>
     </div>
   </div>
 </section>

@@ -311,6 +311,55 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cta-band p { font-size: 14px; color: #5A4312; }
 .cta-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* ---------- Notched project card (image cover with a cut-out arrow corner) ---------- */
+
+.notch-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+.notch-card:focus-visible { outline: 2px solid var(--amber); outline-offset: 6px; border-radius: 28px; }
+
+.notch-cover {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--bg-alt);
+}
+.notch-cover img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.notch-card:hover .notch-cover img, .notch-card:focus-visible .notch-cover img { transform: scale(1.05); }
+
+.notch-badge { position: absolute; inset-inline: 0; top: 14px; display: flex; justify-content: center; pointer-events: none; }
+.notch-badge span {
+  background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.4); color: #fff;
+  font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 999px; backdrop-filter: blur(6px);
+}
+
+.notch-cut { position: absolute; bottom: 0; right: 0; width: 80px; height: 80px; border-top-left-radius: 48px; background: #fff; }
+.notch-fillet { position: absolute; width: 28px; height: 28px; }
+.notch-fillet.a { bottom: 80px; right: 0; background: radial-gradient(circle at top left, transparent 27.5px, #fff 28px); }
+.notch-fillet.b { bottom: 0; right: 80px; background: radial-gradient(circle at top left, transparent 27.5px, #fff 28px); }
+
+.notch-arrow {
+  position: absolute; bottom: 0; right: 0; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--bg-alt); color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.notch-arrow svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+.notch-card:hover .notch-arrow, .notch-card:focus-visible .notch-arrow { background: var(--amber); color: var(--navy); transform: scale(1.06); }
+.notch-card:hover .notch-arrow svg, .notch-card:focus-visible .notch-arrow svg { transform: translate(2px, -2px); }
+
+.notch-card h3 { font-size: 20px; margin-top: 20px; }
+.notch-card .notch-desc { font-size: 14px; margin-top: 8px; }
+.notch-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.notch-tag { background: var(--bg-alt); padding: 5px 10px; border-radius: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #353D5C; }
+
 /* ---------- Day timeline (scrubber + scrolling hour cards) ---------- */
 
 .day-timeline-labels {
