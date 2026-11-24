@@ -142,24 +142,25 @@ def write_page(filename, title, description, active, body, extra_scripts=""):
 # ---------------------------------------------------------------- HOME ----
 
 home_body = f"""
-<section class="hero">
-  <div class="container hero-flex">
-    <div class="hero-copy">
-      <span class="eyebrow">NURSERY &middot; PRIMARY &middot; SECONDARY</span>
-      <h1 style="font-size:50px;font-weight:800;line-height:1.12;color:#fff;">Where Sharp Minds Are Built &mdash; From First Steps to WAEC</h1>
-      <p style="font-size:18px;line-height:1.6;color:#C7CCE6;max-width:540px;">Sharp Brains Schools nurtures confident, curious learners from Nursery through Senior Secondary, with a strong record of WAEC &amp; NECO results and a safe, structured environment parents trust.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
-        <a href="admissions.html" class="btn btn-amber">Apply for Admission</a>
-        <a href="academics.html" class="btn btn-outline-light">Explore Our Programs</a>
-      </div>
-      <div class="stat-row">
-        <div class="stat"><span class="num">[18]+</span><span class="label">Years of Excellence</span></div>
-        <div class="stat"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
-        <div class="stat"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
-      </div>
+<section class="hero-v2">
+  <div class="hero-blob hero-blob-a"></div>
+  <div class="hero-blob hero-blob-b"></div>
+  <div class="hero-giant-text" aria-hidden="true">SHARP BRAINS</div>
+  <div class="hero-photo-wrap">
+    <img src="assets/gallery/trip-11-horse-ride-b.jpg" alt="Sharp Brains student on an educational excursion">
+  </div>
+  <div class="container hero-v2-inner">
+    <div class="hero-v2-left">
+      <span class="hero-pill"><span class="dot"></span>Admissions Open &middot; 2026/2027 Session</span>
+      <h1>Where Sharp Minds Are Built &mdash; From First Steps to WAEC</h1>
+      <p class="hero-v2-tagline">Nursery &middot; Primary &middot; Secondary</p>
     </div>
-    <div class="hero-art">
-      <img src="assets/gallery/trip-03-badagry-gate.jpg" alt="Sharp Brains students on an educational excursion" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:1px solid rgba(255,255,255,0.15);">
+    <div class="hero-v2-right">
+      <p>Sharp Brains Schools nurtures confident, curious learners from Nursery through Senior Secondary, with a strong record of WAEC &amp; NECO results and a safe, structured environment parents trust.</p>
+      <div class="hero-v2-buttons">
+        <a href="admissions.html" class="btn-pill-dark">Apply for Admission <span class="circle-arrow">{nav_icon_svg('arrow')}</span></a>
+        <a href="academics.html" class="btn-pill-light">Explore Our Programs</a>
+      </div>
     </div>
   </div>
 </section>
