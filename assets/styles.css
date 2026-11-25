@@ -458,7 +458,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .footer-wordmark-wrap.in-view { opacity: 1; transform: translateY(0); }
 
-.footer-wordmark {
+.site-footer .footer-wordmark {
   display: inline-block;
   font-family: 'Poppins';
   font-weight: 800;
@@ -496,7 +496,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .footer-wordmark { animation: none; }
+  .site-footer .footer-wordmark { animation: none; }
   .footer-glow-dot { animation: none; }
   .footer-wordmark-wrap { opacity: 1; transform: none; transition: none; }
 }
