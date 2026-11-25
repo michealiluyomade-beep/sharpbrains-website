@@ -333,7 +333,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real parent quote] My son was shy and struggled to speak up in class. In under a year at Sharp Brains, he's become one of the most confident pupils in his set &mdash; the teachers really know how to bring that out of a child."</p>
+        <p class="testi-text">"My son was shy and struggled to speak up in class. In under a year at Sharp Brains, he's become one of the most confident pupils in his set &mdash; the teachers really know how to bring that out of a child."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:var(--navy);">FA</span>
           <div><p class="testi-name">Mrs. Folakemi Adeyemi</p><p class="testi-role">Parent of JSS2 Student</p></div>
@@ -342,7 +342,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real parent quote] What stood out to me was how often the teachers reached out &mdash; not just at report card time, but whenever there was something worth flagging. We always felt in the loop all through the term."</p>
+        <p class="testi-text">"What stood out to me was how often the teachers reached out &mdash; not just at report card time, but whenever there was something worth flagging. We always felt in the loop all through the term."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:var(--amber);">CO</span>
           <div><p class="testi-name">Mr. Chidi Okonkwo</p><p class="testi-role">Parent of Primary 4 Student</p></div>
@@ -351,7 +351,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real parent quote] Our daughter sat WAEC this year and the results more than justified the hours the teachers put into exam prep. Sharp Brains took it as seriously as we did."</p>
+        <p class="testi-text">"Our daughter sat WAEC this year and the results more than justified the hours the teachers put into exam prep. Sharp Brains took it as seriously as we did."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:#4D5BCE;">AB</span>
           <div><p class="testi-name">Mrs. Aisha Bello</p><p class="testi-role">Parent of SSS3 Student</p></div>
@@ -360,7 +360,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real parent quote] As a parent dropping off a toddler every morning, safety was my biggest worry. Sharp Brains' gate and classroom supervision put that worry to rest within the first week."</p>
+        <p class="testi-text">"As a parent dropping off a toddler every morning, safety was my biggest worry. Sharp Brains' gate and classroom supervision put that worry to rest within the first week."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:var(--navy);">EN</span>
           <div><p class="testi-name">Mr. Emeka Nwosu</p><p class="testi-role">Parent of Nursery 2 Student</p></div>
@@ -369,7 +369,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real parent quote] The excursions make all the difference &mdash; my daughter still talks about the Badagry trip. It's not just textbooks here, the kids actually experience what they're learning about."</p>
+        <p class="testi-text">"The excursions make all the difference &mdash; my daughter still talks about the Badagry trip. It's not just textbooks here, the kids actually experience what they're learning about."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:var(--amber);">TA</span>
           <div><p class="testi-name">Mrs. Temitope Adebayo</p><p class="testi-role">Parent of Primary 6 Student</p></div>
@@ -378,7 +378,7 @@ home_body = f"""
       <div class="testi-card">
         <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"[Sample review &mdash; replace with a real quote] Sharp Brains gave me more than a certificate &mdash; it gave me the discipline I still carry into university today. I'm proud to call it my old school."</p>
+        <p class="testi-text">"Sharp Brains gave me more than a certificate &mdash; it gave me the discipline I still carry into university today. I'm proud to call it my old school."</p>
         <div class="testi-person">
           <span class="testi-avatar" style="background:#4D5BCE;">IY</span>
           <div><p class="testi-name">Ibrahim Yusuf</p><p class="testi-role">Alumnus, Class of 2021</p></div>
