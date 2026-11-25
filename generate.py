@@ -129,7 +129,6 @@ FOOTER = """<section class="cta-split">
   </div>
 </footer>
 <script src="assets/main.js"></script>
-<script src="assets/cursor-follower.js"></script>
 </body>
 </html>
 """
