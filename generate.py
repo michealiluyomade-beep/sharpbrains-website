@@ -451,11 +451,13 @@ about_body = """
 </section>
 
 <section class="section section-dark">
-  <div class="container grid grid-4">
-    <div class="stat"><span class="num">[18]+</span><span class="label">Years of Operation</span></div>
-    <div class="stat"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
-    <div class="stat"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
-    <div class="stat"><span class="num">[40]+</span><span class="label">Teaching Staff</span></div>
+  <div class="container">
+    <div class="stat-band">
+      <div class="stat-band-item"><span class="num">[18]+</span><span class="label">Years of Operation</span></div>
+      <div class="stat-band-item"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
+      <div class="stat-band-item"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
+      <div class="stat-band-item"><span class="num">[40]+</span><span class="label">Teaching Staff</span></div>
+    </div>
   </div>
 </section>
 
@@ -467,25 +469,29 @@ about_body = """
       <p class="muted">Meet the people guiding Sharp Brains day to day. <a href="staff.html" style="color:var(--indigo);font-weight:700;">See the full staff directory &rarr;</a></p>
     </div>
     <div class="grid grid-4">
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div>
-        <p style="font-weight:700;font-size:15px;">[Principal's Name]</p>
-        <p style="font-size:13px;color:var(--muted-2);">Principal</p>
+      <div class="staff-card">
+        <div class="staff-photo">[Photo]</div>
+        <div class="staff-accent"></div>
+        <p class="staff-name">[Principal's Name]</p>
+        <p class="staff-role">Principal</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div>
-        <p style="font-weight:700;font-size:15px;">[Teacher Name]</p>
-        <p style="font-size:13px;color:var(--muted-2);">Head of Secondary</p>
+      <div class="staff-card">
+        <div class="staff-photo">[Photo]</div>
+        <div class="staff-accent"></div>
+        <p class="staff-name">[Teacher Name]</p>
+        <p class="staff-role">Head of Secondary</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div>
-        <p style="font-weight:700;font-size:15px;">[Teacher Name]</p>
-        <p style="font-size:13px;color:var(--muted-2);">Head of Primary</p>
+      <div class="staff-card">
+        <div class="staff-photo">[Photo]</div>
+        <div class="staff-accent"></div>
+        <p class="staff-name">[Teacher Name]</p>
+        <p class="staff-role">Head of Primary</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div>
-        <p style="font-weight:700;font-size:15px;">[Teacher Name]</p>
-        <p style="font-size:13px;color:var(--muted-2);">Head of Nursery</p>
+      <div class="staff-card">
+        <div class="staff-photo">[Photo]</div>
+        <div class="staff-accent"></div>
+        <p class="staff-name">[Teacher Name]</p>
+        <p class="staff-role">Head of Nursery</p>
       </div>
     </div>
   </div>
@@ -632,20 +638,29 @@ admissions_body = """
       <p class="muted">Figures below are placeholders &mdash; replace with actual fee amounts before publishing.</p>
     </div>
     <div class="grid grid-3">
-      <div class="card">
-        <h3 style="font-size:18px;">Nursery</h3>
-        <p style="font-family:'Poppins';font-weight:800;font-size:26px;color:var(--navy);padding-top:8px;">[&#8358;XX,XXX]</p>
-        <p class="muted" style="font-size:13px;">per term</p>
+      <div class="fee-card">
+        <div class="fee-icon">&#129498;</div>
+        <h3 class="fee-level">Nursery</h3>
+        <p class="fee-price">[&#8358;XX,XXX]</p>
+        <p class="fee-term">per term</p>
+        <div class="fee-divider"></div>
+        <p class="fee-includes">Includes tuition, workbooks &amp; activity fees.</p>
       </div>
-      <div class="card">
-        <h3 style="font-size:18px;">Primary</h3>
-        <p style="font-family:'Poppins';font-weight:800;font-size:26px;color:var(--navy);padding-top:8px;">[&#8358;XX,XXX]</p>
-        <p class="muted" style="font-size:13px;">per term</p>
+      <div class="fee-card">
+        <div class="fee-icon">&#128218;</div>
+        <h3 class="fee-level">Primary</h3>
+        <p class="fee-price">[&#8358;XX,XXX]</p>
+        <p class="fee-term">per term</p>
+        <div class="fee-divider"></div>
+        <p class="fee-includes">Includes tuition, textbooks &amp; activity fees.</p>
       </div>
-      <div class="card">
-        <h3 style="font-size:18px;">Secondary</h3>
-        <p style="font-family:'Poppins';font-weight:800;font-size:26px;color:var(--navy);padding-top:8px;">[&#8358;XX,XXX]</p>
-        <p class="muted" style="font-size:13px;">per term</p>
+      <div class="fee-card">
+        <div class="fee-icon">&#127891;</div>
+        <h3 class="fee-level">Secondary</h3>
+        <p class="fee-price">[&#8358;XX,XXX]</p>
+        <p class="fee-term">per term</p>
+        <div class="fee-divider"></div>
+        <p class="fee-includes">Includes tuition, textbooks, labs &amp; WAEC/NECO prep.</p>
       </div>
     </div>
     <div style="padding-top:24px;text-align:center;">
@@ -961,30 +976,45 @@ news_body = """
         <p class="muted" style="font-size:14px;">Students marked Democracy Day with a celebration of freedom, unity, and the power of every voice &mdash; one nation, one future.</p>
       </div>
     </div>
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="placeholder-block light" style="aspect-ratio:4/3;border-radius:0;">[Photo]</div>
+      <div style="padding:24px;">
+        <span class="tag">[Date]</span>
+        <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
+        <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="placeholder-block light" style="aspect-ratio:4/3;border-radius:0;">[Photo]</div>
+      <div style="padding:24px;">
+        <span class="tag">[Date]</span>
+        <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
+        <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="placeholder-block light" style="aspect-ratio:4/3;border-radius:0;">[Photo]</div>
+      <div style="padding:24px;">
+        <span class="tag">[Date]</span>
+        <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
+        <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="placeholder-block light" style="aspect-ratio:4/3;border-radius:0;">[Photo]</div>
+      <div style="padding:24px;">
+        <span class="tag">[Date]</span>
+        <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
+        <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+      </div>
     </div>
-    <div class="card">
-      <span class="tag">[Date]</span>
-      <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
-      <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="placeholder-block light" style="aspect-ratio:4/3;border-radius:0;">[Photo]</div>
+      <div style="padding:24px;">
+        <span class="tag">[Date]</span>
+        <h3 style="font-size:17px;padding-top:10px;">[News headline placeholder]</h3>
+        <p class="muted" style="font-size:14px;">[A short excerpt describing the news item or event, two to three sentences.]</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1007,10 +1037,10 @@ staff_body = """
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Leadership</h2>
     <div class="grid grid-4">
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Principal's Name]</p><p class="muted" style="font-size:13px;">Principal</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Vice Principal's Name]</p><p class="muted" style="font-size:13px;">Vice Principal</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Name]</p><p class="muted" style="font-size:13px;">Head of Secondary</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Name]</p><p class="muted" style="font-size:13px;">Head of Primary</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Principal's Name]</p><p class="staff-role">Principal</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Vice Principal's Name]</p><p class="staff-role">Vice Principal</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Name]</p><p class="staff-role">Head of Secondary</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Name]</p><p class="staff-role">Head of Primary</p></div>
     </div>
   </div>
 </section>
@@ -1019,10 +1049,10 @@ staff_body = """
   <div class="container">
     <h2 style="font-size:22px;padding-bottom:24px;">Teaching Staff</h2>
     <div class="grid grid-4">
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Teacher Name]</p><p class="muted" style="font-size:13px;">[Subject]</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Teacher Name]</p><p class="muted" style="font-size:13px;">[Subject]</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Teacher Name]</p><p class="muted" style="font-size:13px;">[Subject]</p></div>
-      <div style="display:flex;flex-direction:column;gap:12px;"><div class="placeholder-block light" style="aspect-ratio:1/1;">[Photo]</div><p style="font-weight:700;font-size:15px;">[Teacher Name]</p><p class="muted" style="font-size:13px;">[Subject]</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Teacher Name]</p><p class="staff-role">[Subject]</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Teacher Name]</p><p class="staff-role">[Subject]</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Teacher Name]</p><p class="staff-role">[Subject]</p></div>
+      <div class="staff-card"><div class="staff-photo">[Photo]</div><div class="staff-accent"></div><p class="staff-name">[Teacher Name]</p><p class="staff-role">[Subject]</p></div>
     </div>
   </div>
 </section>
