@@ -673,6 +673,63 @@ ul { margin: 0; padding: 0; list-style: none; }
   .endless-root { height: 420px; }
 }
 
+/* ---------- Bento gallery preview ---------- */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 160px;
+  gap: 12px;
+  padding: 32px 0 8px;
+}
+
+.bento-item {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #11143A;
+}
+
+.bento-item.big { grid-column: span 2; grid-row: span 2; }
+.bento-item.wide { grid-column: span 2; }
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.bento-item:hover img { transform: scale(1.06); }
+
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(10,12,38,0.75), rgba(10,12,38,0) 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.bento-item:hover .bento-overlay { opacity: 1; }
+
+.bento-overlay span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 760px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+  .bento-item.big { grid-column: span 2; grid-row: span 1; }
+  .bento-item.wide { grid-column: span 2; }
+}
+
 /* ---------- Testimonial masonry ---------- */
 
 .testi-masonry {
