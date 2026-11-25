@@ -313,22 +313,62 @@ home_body = f"""
     <div class="section-head">
       <span class="eyebrow-dark">(04) KIND WORDS</span>
       <h2>What Parents Say</h2>
+      <p class="muted">Real feedback from our school community &mdash; swap these in for the real quotes any time.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="card sm">
+    <div class="testi-masonry">
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p style="font-size:14px;color:#353D5C;line-height:1.6;">"[Parent testimonial placeholder &mdash; how the school helped their child grow academically and socially.]"</p>
-        <p style="font-weight:700;font-size:13px;color:var(--navy);">&mdash; [Parent Name], Parent of [Grade] Student</p>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; how the school helped their child grow academically and socially.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:var(--navy);">PA</span>
+          <div><p class="testi-name">[Parent Name]</p><p class="testi-role">Parent of [Grade] Student</p></div>
+        </div>
       </div>
-      <div class="card sm">
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p style="font-size:14px;color:#353D5C;line-height:1.6;">"[Parent testimonial placeholder &mdash; mention of teacher quality or communication.]"</p>
-        <p style="font-weight:700;font-size:13px;color:var(--navy);">&mdash; [Parent Name], Parent of [Grade] Student</p>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; mention of teacher quality or communication, with a specific detail about how staff kept them updated through the term.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:var(--amber);">PA</span>
+          <div><p class="testi-name">[Parent Name]</p><p class="testi-role">Parent of [Grade] Student</p></div>
+        </div>
       </div>
-      <div class="card sm">
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p style="font-size:14px;color:#353D5C;line-height:1.6;">"[Parent testimonial placeholder &mdash; mention of WAEC results or admissions outcome.]"</p>
-        <p style="font-weight:700;font-size:13px;color:var(--navy);">&mdash; [Parent Name], Parent of [Grade] Student</p>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; mention of WAEC results or admissions outcome.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:#4D5BCE;">PA</span>
+          <div><p class="testi-name">[Parent Name]</p><p class="testi-role">Parent of [Grade] Student</p></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; a note about the campus feeling safe and well-supervised.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:var(--navy);">PA</span>
+          <div><p class="testi-name">[Parent Name]</p><p class="testi-role">Parent of [Grade] Student</p></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; a short line about sports, excursions, or clubs their child loved.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:var(--amber);">PA</span>
+          <div><p class="testi-name">[Parent Name]</p><p class="testi-role">Parent of [Grade] Student</p></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-quote">&#8220;</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p class="testi-text">"[Parent testimonial placeholder &mdash; a quote from a staff member or alumnus about what makes Sharp Brains different.]"</p>
+        <div class="testi-person">
+          <span class="testi-avatar" style="background:#4D5BCE;">PA</span>
+          <div><p class="testi-name">[Name]</p><p class="testi-role">[Role / Alumnus]</p></div>
+        </div>
       </div>
     </div>
   </div>
