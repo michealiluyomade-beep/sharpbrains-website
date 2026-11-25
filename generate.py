@@ -230,11 +230,11 @@ home_body = f"""
       <span class="eyebrow-dark" style="color:var(--amber);">(02) RESULTS &amp; ACHIEVEMENTS</span>
       <h2>A Record Parents Can Trust</h2>
     </div>
-    <div class="grid grid-4">
-      <div class="stat"><span class="num">[18]+</span><span class="label">Years of Operation</span></div>
-      <div class="stat"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
-      <div class="stat"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
-      <div class="stat"><span class="num">[300]+</span><span class="label">University Placements</span></div>
+    <div class="stat-band">
+      <div class="stat-band-item"><span class="num">[18]+</span><span class="label">Years of Operation</span></div>
+      <div class="stat-band-item"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
+      <div class="stat-band-item"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
+      <div class="stat-band-item"><span class="num">[300]+</span><span class="label">University Placements</span></div>
     </div>
   </div>
 </section>

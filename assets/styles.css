@@ -186,6 +186,47 @@ ul { margin: 0; padding: 0; list-style: none; }
 .stat.on-light .num { color: var(--navy); }
 .stat.on-light .label { color: var(--muted); }
 
+.stat-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.stat-band-item {
+  padding: 30px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.14);
+}
+
+.stat-band-item:last-child { border-right: none; }
+
+.stat-band-item .num {
+  display: block;
+  font-family: 'Poppins';
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--amber);
+  line-height: 1.1;
+}
+
+.stat-band-item .label {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9BA3C9;
+}
+
+@media (max-width: 760px) {
+  .stat-band { grid-template-columns: repeat(2, 1fr); }
+  .stat-band-item:nth-child(2n) { border-right: none; }
+  .stat-band-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.14); }
+}
+
 .placeholder-block {
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.65); font-weight: 600; font-size: 14px;
