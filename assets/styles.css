@@ -1256,3 +1256,59 @@ ul { margin: 0; padding: 0; list-style: none; }
     background: #fff; font-size: 18px; cursor: pointer;
   }
 }
+
+/* ---------- Owl tear-reveal (scroll-driven paper tear) ---------- */
+
+.owl-tear-section {
+  position: relative;
+  width: 100%;
+  background: #F3EEE2;
+  overflow: clip;
+  height: calc(100svh + 140svh);
+}
+
+.owl-tear-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.owl-tear-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: default;
+}
+
+.owl-tear-hint {
+  position: absolute;
+  left: 0; right: 0; bottom: 28px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: #11193F;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.owl-tear-hint-bar {
+  width: 1px; height: 24px; background: #11193F;
+  animation: owlHintPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes owlHintPulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .owl-tear-hint-bar { animation: none; opacity: 0.6; }
+}
+
+@media (max-width: 640px) {
+  .owl-tear-section { height: calc(100svh + 90svh); }
+}
