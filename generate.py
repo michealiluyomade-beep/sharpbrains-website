@@ -228,11 +228,6 @@ home_body = f"""
         <a href="admissions.html" class="btn btn-amber">Apply for Admission</a>
         <a href="academics.html" class="btn btn-outline-light">Explore Our Programs</a>
       </div>
-      <div class="stat-row hero-in" style="--d:0.32s;">
-        <div class="stat"><span class="num">[18]+</span><span class="label">Years of Excellence</span></div>
-        <div class="stat"><span class="num">[1,200]+</span><span class="label">Students Enrolled</span></div>
-        <div class="stat"><span class="num">[92]%</span><span class="label">WAEC Pass Rate</span></div>
-      </div>
     </div>
     <div class="hero-art hero-fade-in" style="--d:0.2s;" data-tilt data-tilt-max="8">
       <img src="assets/gallery/trip-03-badagry-gate.jpg" alt="Sharp Brains students on an educational excursion" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:1px solid rgba(255,255,255,0.15);">
