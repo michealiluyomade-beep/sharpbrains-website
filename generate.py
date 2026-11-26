@@ -171,12 +171,12 @@ TESTIMONIALS = [
     {
         "initials": "TA", "color": "var(--amber)",
         "name": "Mrs. Temitope Adebayo", "role": "Parent of Primary 6 Student",
-        "text": "The excursions make all the difference &mdash; my daughter still talks about the Badagry trip. It's not just textbooks here.",
+        "text": "The excursions make all the difference. My daughter still talks about the Badagry trip, months later.",
     },
     {
         "initials": "IY", "color": "#4D5BCE",
         "name": "Ibrahim Yusuf", "role": "Alumnus, Class of 2021",
-        "text": "Sharp Brains gave me more than a certificate &mdash; it gave me the discipline I still carry into university today.",
+        "text": "Sharp Brains gave me more than a certificate. The discipline I picked up there is something I still carry into university.",
     },
 ]
 
@@ -222,8 +222,8 @@ home_body = f"""
   <div class="container hero-flex">
     <div class="hero-copy">
       <span class="eyebrow hero-in" style="--d:0s">NURSERY &middot; PRIMARY &middot; SECONDARY</span>
-      <h1 class="hero-in" style="--d:0.08s;font-size:50px;font-weight:800;line-height:1.12;color:#fff;">Where Sharp Minds Are Built &mdash; From First Steps to WAEC</h1>
-      <p class="hero-in" style="--d:0.16s;font-size:18px;line-height:1.6;color:#C7CCE6;max-width:540px;">Sharp Brains Schools nurtures confident, curious learners from Nursery through Senior Secondary, with a strong record of WAEC &amp; NECO results and a safe, structured environment parents trust.</p>
+      <h1 class="hero-in" style="--d:0.08s;font-size:50px;font-weight:800;line-height:1.12;color:#fff;">Where Sharp Minds Are Built, From First Steps to WAEC</h1>
+      <p class="hero-in" style="--d:0.16s;font-size:18px;line-height:1.6;color:#C7CCE6;max-width:540px;">Sharp Brains Schools nurtures confident, curious learners from Nursery through Senior Secondary, backed by a strong WAEC and NECO track record and a safe, structured environment parents trust.</p>
       <div class="hero-in" style="--d:0.24s;display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
         <a href="admissions.html" class="btn btn-amber">Apply for Admission</a>
         <a href="academics.html" class="btn btn-outline-light">Explore Our Programs</a>
@@ -327,7 +327,7 @@ home_body = f"""
     <div class="section-head">
       <span class="eyebrow-dark">(03) A DAY AT SHARP BRAINS</span>
       <h2>One Day, Told by the Hour</h2>
-      <p class="muted">Gates open at 7:00am and the last bus pulls out by 4:00pm. Drag the dot or scroll the cards &mdash; they move together.</p>
+      <p class="muted">Gates open at 7:00am and the last bus pulls out by 4:00pm. Drag the dot or scroll the cards; they move together.</p>
     </div>
     <div class="day-timeline">
       <div class="day-timeline-labels"><span>7:00 AM</span><span>4:00 PM</span></div>
@@ -349,7 +349,7 @@ home_body = f"""
         <div class="day-card">
           <span class="day-card-time"><span class="dot"></span>8:00 AM</span>
           <h3>Periods 1 &amp; 2</h3>
-          <p>Core subjects while concentration is freshest &mdash; Maths, English, and the Sciences.</p>
+          <p>Core subjects while concentration is freshest: Maths, English, and the Sciences.</p>
         </div>
         <div class="day-card">
           <span class="day-card-time"><span class="dot"></span>9:40 AM</span>
@@ -396,7 +396,7 @@ home_body = f"""
     <div class="section-head">
       <span class="eyebrow-dark">(04) KIND WORDS</span>
       <h2>What Parents Say</h2>
-      <p class="muted">Real feedback from our school community &mdash; swap these in for the real quotes any time.</p>
+      <p class="muted">Real feedback from our school community. Swap these in for the real quotes any time.</p>
     </div>
   </div>
   {testimonial_marquee()}
@@ -406,7 +406,7 @@ home_body = f"""
   <div class="container" style="padding-top:64px;padding-bottom:24px;">
     <span class="eyebrow-dark" style="color:var(--amber);">(05) GALLERY PREVIEW</span>
     <h2 style="color:#fff;font-size:32px;font-weight:800;padding-top:12px;">Life at Sharp Brains, in Motion</h2>
-    <p style="color:#9BA3C9;max-width:560px;padding-top:10px;font-size:15px;">A running look at campus life. Panels below are placeholders &mdash; swap in real photos any time.</p>
+    <p style="color:#9BA3C9;max-width:560px;padding-top:10px;font-size:15px;">A running look at campus life. Panels below are placeholders; swap in real photos any time.</p>
   </div>
   <div class="container">
     <div class="bento-grid">
@@ -461,7 +461,7 @@ about_body = """
   <div class="container">
     <span class="eyebrow">ABOUT US</span>
     <h1 style="color:#fff;font-size:40px;font-weight:800;padding-top:12px;">Our Story</h1>
-    <p style="color:#C7CCE6;max-width:560px;padding-top:12px;font-size:16px;">[Placeholder: a paragraph on when and why the school was founded, its founders, and its journey to today.]</p>
+    <p style="color:#C7CCE6;max-width:560px;padding-top:12px;font-size:16px;">[Add a short paragraph here on when and why the school was founded, who founded it, and how it's grown since.]</p>
   </div>
 </section>
 
@@ -469,11 +469,11 @@ about_body = """
   <div class="container grid grid-2">
     <div>
       <span class="eyebrow-dark">OUR MISSION</span>
-      <h2 style="font-size:28px;padding-top:12px;">[Placeholder mission statement &mdash; what the school exists to do for its students.]</h2>
+      <h2 style="font-size:28px;padding-top:12px;">[Add a mission statement: what the school exists to do for its students.]</h2>
     </div>
     <div>
       <span class="eyebrow-dark">OUR VISION</span>
-      <h2 style="font-size:28px;padding-top:12px;">[Placeholder vision statement &mdash; what the school aims to become.]</h2>
+      <h2 style="font-size:28px;padding-top:12px;">[Add a vision statement: what the school aims to become.]</h2>
     </div>
   </div>
 </section>
@@ -532,9 +532,9 @@ about_body = """
       <h2>Recognized &amp; Trusted</h2>
     </div>
     <div class="grid grid-3">
-      <div class="card sm">&#127963;&#65039; <strong>Lagos State Ministry of Education</strong> &mdash; Approved and licensed.</div>
-      <div class="card sm">&#128221; <strong>WAEC &amp; NECO</strong> &mdash; Registered examination centre.</div>
-      <div class="card sm">&#127942; <strong>[Award/Body Name]</strong> &mdash; [Placeholder recognition or membership.]</div>
+      <div class="card sm">&#127963;&#65039; <strong>Lagos State Ministry of Education:</strong> approved and licensed.</div>
+      <div class="card sm">&#128221; <strong>WAEC &amp; NECO:</strong> registered examination centre.</div>
+      <div class="card sm">&#127942; <strong>[Award/Body Name]:</strong> [add any other recognition or membership here.]</div>
     </div>
   </div>
 </section>
@@ -663,7 +663,7 @@ admissions_body = """
     <div class="section-head">
       <span class="eyebrow-dark">SCHOOL FEES</span>
       <h2>Fees Per Term</h2>
-      <p class="muted">Figures below are placeholders &mdash; replace with actual fee amounts before publishing.</p>
+      <p class="muted">Figures below are placeholders. Replace with actual fee amounts before publishing.</p>
     </div>
     <div class="grid grid-3">
       <div class="fee-card">
@@ -709,31 +709,31 @@ admissions_body = """
         <h3 class="lf-h"><button class="lf-q" aria-expanded="false">
           <span class="lf-qt">Do you offer both day and boarding options?</span><span class="lf-ico" aria-hidden="true"></span>
         </button></h3>
-        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Placeholder answer &mdash; describe day/boarding options, hostel facilities, and pickup arrangements.]</div></div></div>
+        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Add an answer here: describe day/boarding options, hostel facilities, and pickup arrangements.]</div></div></div>
       </div>
       <div class="lf-item">
         <h3 class="lf-h"><button class="lf-q" aria-expanded="false">
           <span class="lf-qt">What exam boards do you prepare students for?</span><span class="lf-ico" aria-hidden="true"></span>
         </button></h3>
-        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Placeholder answer &mdash; e.g. WAEC, NECO, and JAMB, with mock exam schedule details.]</div></div></div>
+        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Add an answer here: e.g. WAEC, NECO, and JAMB, with mock exam schedule details.]</div></div></div>
       </div>
       <div class="lf-item">
         <h3 class="lf-h"><button class="lf-q" aria-expanded="false">
           <span class="lf-qt">Is there an entrance exam for new students?</span><span class="lf-ico" aria-hidden="true"></span>
         </button></h3>
-        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Placeholder answer &mdash; describe the assessment subjects and format for each level.]</div></div></div>
+        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Add an answer here: describe the assessment subjects and format for each level.]</div></div></div>
       </div>
       <div class="lf-item">
         <h3 class="lf-h"><button class="lf-q" aria-expanded="false">
           <span class="lf-qt">What is the school's fee payment structure?</span><span class="lf-ico" aria-hidden="true"></span>
         </button></h3>
-        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Placeholder answer &mdash; termly or annual payment, installment options, and accepted payment methods.]</div></div></div>
+        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Add an answer here: termly or annual payment, installment options, and accepted payment methods.]</div></div></div>
       </div>
       <div class="lf-item">
         <h3 class="lf-h"><button class="lf-q" aria-expanded="false">
           <span class="lf-qt">Do you provide transportation (school bus) services?</span><span class="lf-ico" aria-hidden="true"></span>
         </button></h3>
-        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Placeholder answer &mdash; list routes and whether it is included in fees or optional.]</div></div></div>
+        <div class="lf-panel"><div class="lf-inner"><div class="lf-a">[Add an answer here: list routes and whether it's included in fees or optional.]</div></div></div>
       </div>
     </div>
   </div>
@@ -1001,7 +1001,7 @@ news_body = """
       <div style="padding:24px;">
         <span class="tag">June 12</span>
         <h3 style="font-size:17px;padding-top:10px;">Happy Democracy Day, Nigeria!</h3>
-        <p class="muted" style="font-size:14px;">Students marked Democracy Day with a celebration of freedom, unity, and the power of every voice &mdash; one nation, one future.</p>
+        <p class="muted" style="font-size:14px;">Students marked Democracy Day with a celebration of freedom, unity, and the power of every voice: one nation, one future.</p>
       </div>
     </div>
     <div class="card" style="padding:0;overflow:hidden;">
