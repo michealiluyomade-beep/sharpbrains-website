@@ -1050,76 +1050,112 @@ ul { margin: 0; padding: 0; list-style: none; }
   .bento-item.wide { grid-column: span 2; }
 }
 
-/* ---------- Testimonial masonry ---------- */
+/* ---------- Testimonial 3D marquee ---------- */
 
-.testi-masonry {
-  column-count: 3;
-  column-gap: 20px;
-}
-
-.testi-card {
+.testi-3d-wrap {
   position: relative;
-  break-inside: avoid;
-  margin-bottom: 20px;
-  background: #fff;
+  overflow: hidden;
+  height: 480px;
+  border-radius: 24px;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px 22px 20px;
-  box-shadow: 0 1px 2px rgba(17, 25, 63, 0.04);
+  background: var(--bg-alt);
+  perspective: 900px;
 }
 
-.testi-quote {
+.testi-3d-stage {
   position: absolute;
-  top: 10px;
-  right: 18px;
-  font-family: Georgia, serif;
-  font-size: 48px;
-  line-height: 1;
-  color: var(--border);
-  user-select: none;
-}
-
-.testi-card .stars { display: block; margin-bottom: 10px; letter-spacing: 2px; }
-
-.testi-text {
-  font-size: 14px;
-  line-height: 1.65;
-  color: #353D5C;
-  position: relative;
-  z-index: 1;
-}
-
-.testi-person {
+  inset: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+  justify-content: center;
+  gap: 18px;
+  transform-style: preserve-3d;
+  transform: scale(1.18) rotateX(14deg) rotateY(-10deg) rotateZ(9deg);
 }
 
-.testi-avatar {
+.testi-3d-col {
+  width: 240px;
+  height: 640px;
+  overflow: hidden;
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
+}
+
+.testi-3d-track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: testiScrollUp 26s linear infinite;
+}
+
+.testi-3d-track.testi-3d-down { animation-name: testiScrollDown; }
+
+.testi-3d-wrap:hover .testi-3d-track { animation-play-state: paused; }
+
+@keyframes testiScrollUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes testiScrollDown {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+.testi-mini-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(17, 25, 63, 0.05);
+}
+
+.testi-mini-head { display: flex; align-items: center; gap: 10px; }
+
+.testi-mini-avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #fff;
 }
 
-.testi-name { font-weight: 700; font-size: 13px; color: var(--navy); line-height: 1.3; }
-.testi-role { font-size: 12px; color: #8890AD; line-height: 1.3; }
+.testi-mini-name { font-weight: 700; font-size: 12.5px; color: var(--navy); line-height: 1.3; }
+.testi-mini-role { font-size: 11px; color: #8890AD; line-height: 1.3; }
+.testi-mini-text { font-size: 12.5px; line-height: 1.55; color: #353D5C; margin-top: 10px; }
+
+.testi-3d-fade {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+.testi-3d-fade-top { top: 0; left: 0; right: 0; height: 30%; background: linear-gradient(var(--bg-alt), transparent); }
+.testi-3d-fade-bottom { bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(transparent, var(--bg-alt)); }
+.testi-3d-fade-left { top: 0; bottom: 0; left: 0; width: 12%; background: linear-gradient(90deg, var(--bg-alt), transparent); }
+.testi-3d-fade-right { top: 0; bottom: 0; right: 0; width: 12%; background: linear-gradient(270deg, var(--bg-alt), transparent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .testi-3d-track { animation: none; }
+  .testi-3d-stage { transform: none; }
+  .testi-3d-wrap { height: auto; overflow: visible; }
+  .testi-3d-col { height: auto; overflow: visible; }
+}
 
 @media (max-width: 900px) {
-  .testi-masonry { column-count: 2; }
+  .testi-3d-stage { transform: scale(1) rotateX(10deg) rotateY(-6deg) rotateZ(6deg); gap: 12px; }
+  .testi-3d-col { width: 200px; }
 }
 
 @media (max-width: 640px) {
-  .testi-masonry { column-count: 1; }
+  .testi-3d-wrap { height: 400px; }
+  .testi-3d-col:nth-child(3), .testi-3d-col:nth-child(4) { display: none; }
+  .testi-3d-stage { transform: none; perspective: none; gap: 14px; }
+  .testi-3d-fade-left, .testi-3d-fade-right { display: none; }
 }
 
 /* ---------- 3D tilt ---------- */

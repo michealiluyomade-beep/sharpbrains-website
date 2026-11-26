@@ -146,6 +146,75 @@ def write_page(filename, title, description, active, body, extra_scripts=""):
 
 # ---------------------------------------------------------------- HOME ----
 
+# Testimonials data, shared by the 3D marquee on the homepage.
+TESTIMONIALS = [
+    {
+        "initials": "FA", "color": "var(--navy)",
+        "name": "Mrs. Folakemi Adeyemi", "role": "Parent of JSS2 Student",
+        "text": "My son was shy and struggled to speak up in class. In under a year at Sharp Brains, he's become one of the most confident pupils in his set.",
+    },
+    {
+        "initials": "CO", "color": "var(--amber)",
+        "name": "Mr. Chidi Okonkwo", "role": "Parent of Primary 4 Student",
+        "text": "What stood out to me was how often the teachers reached out, not just at report card time. We always felt in the loop all through the term.",
+    },
+    {
+        "initials": "AB", "color": "#4D5BCE",
+        "name": "Mrs. Aisha Bello", "role": "Parent of SSS3 Student",
+        "text": "Our daughter sat WAEC this year and the results more than justified the hours the teachers put into exam prep.",
+    },
+    {
+        "initials": "EN", "color": "var(--navy)",
+        "name": "Mr. Emeka Nwosu", "role": "Parent of Nursery 2 Student",
+        "text": "As a parent dropping off a toddler every morning, safety was my biggest worry. The gate and classroom supervision put that to rest fast.",
+    },
+    {
+        "initials": "TA", "color": "var(--amber)",
+        "name": "Mrs. Temitope Adebayo", "role": "Parent of Primary 6 Student",
+        "text": "The excursions make all the difference &mdash; my daughter still talks about the Badagry trip. It's not just textbooks here.",
+    },
+    {
+        "initials": "IY", "color": "#4D5BCE",
+        "name": "Ibrahim Yusuf", "role": "Alumnus, Class of 2021",
+        "text": "Sharp Brains gave me more than a certificate &mdash; it gave me the discipline I still carry into university today.",
+    },
+]
+
+def testi_mini_card(t):
+    return f"""<div class="testi-mini-card">
+          <div class="testi-mini-head">
+            <span class="testi-mini-avatar" style="background:{t['color']};">{t['initials']}</span>
+            <div><p class="testi-mini-name">{t['name']}</p><p class="testi-mini-role">{t['role']}</p></div>
+          </div>
+          <p class="testi-mini-text">&ldquo;{t['text']}&rdquo;</p>
+        </div>"""
+
+def testi_column(indices, direction, duration):
+    cards = "\n        ".join(testi_mini_card(TESTIMONIALS[i]) for i in indices)
+    # Render the set twice back-to-back so the loop (translateY -50%) is seamless.
+    return f"""<div class="testi-3d-col">
+      <div class="testi-3d-track testi-3d-{direction}" style="animation-duration:{duration}s;">
+        {cards}
+        {cards}
+      </div>
+    </div>"""
+
+def testimonial_marquee():
+    return f"""<div class="container">
+    <div class="testi-3d-wrap">
+      <div class="testi-3d-stage">
+        {testi_column([0, 1, 2], "up", 26)}
+        {testi_column([3, 4, 5], "down", 30)}
+        {testi_column([2, 4, 0], "up", 23)}
+        {testi_column([5, 1, 3], "down", 28)}
+      </div>
+      <div class="testi-3d-fade testi-3d-fade-top"></div>
+      <div class="testi-3d-fade testi-3d-fade-bottom"></div>
+      <div class="testi-3d-fade testi-3d-fade-left"></div>
+      <div class="testi-3d-fade testi-3d-fade-right"></div>
+    </div>
+  </div>"""
+
 home_body = f"""
 <section class="hero">
   <div class="hero-aura hero-aura-a"></div>
@@ -329,63 +398,8 @@ home_body = f"""
       <h2>What Parents Say</h2>
       <p class="muted">Real feedback from our school community &mdash; swap these in for the real quotes any time.</p>
     </div>
-    <div class="testi-masonry">
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"My son was shy and struggled to speak up in class. In under a year at Sharp Brains, he's become one of the most confident pupils in his set &mdash; the teachers really know how to bring that out of a child."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:var(--navy);">FA</span>
-          <div><p class="testi-name">Mrs. Folakemi Adeyemi</p><p class="testi-role">Parent of JSS2 Student</p></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"What stood out to me was how often the teachers reached out &mdash; not just at report card time, but whenever there was something worth flagging. We always felt in the loop all through the term."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:var(--amber);">CO</span>
-          <div><p class="testi-name">Mr. Chidi Okonkwo</p><p class="testi-role">Parent of Primary 4 Student</p></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"Our daughter sat WAEC this year and the results more than justified the hours the teachers put into exam prep. Sharp Brains took it as seriously as we did."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:#4D5BCE;">AB</span>
-          <div><p class="testi-name">Mrs. Aisha Bello</p><p class="testi-role">Parent of SSS3 Student</p></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"As a parent dropping off a toddler every morning, safety was my biggest worry. Sharp Brains' gate and classroom supervision put that worry to rest within the first week."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:var(--navy);">EN</span>
-          <div><p class="testi-name">Mr. Emeka Nwosu</p><p class="testi-role">Parent of Nursery 2 Student</p></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"The excursions make all the difference &mdash; my daughter still talks about the Badagry trip. It's not just textbooks here, the kids actually experience what they're learning about."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:var(--amber);">TA</span>
-          <div><p class="testi-name">Mrs. Temitope Adebayo</p><p class="testi-role">Parent of Primary 6 Student</p></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-quote">&#8220;</span>
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p class="testi-text">"Sharp Brains gave me more than a certificate &mdash; it gave me the discipline I still carry into university today. I'm proud to call it my old school."</p>
-        <div class="testi-person">
-          <span class="testi-avatar" style="background:#4D5BCE;">IY</span>
-          <div><p class="testi-name">Ibrahim Yusuf</p><p class="testi-role">Alumnus, Class of 2021</p></div>
-        </div>
-      </div>
-    </div>
   </div>
+  {testimonial_marquee()}
 </section>
 
 <section style="background:#000;">
