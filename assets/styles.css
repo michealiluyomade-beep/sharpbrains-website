@@ -1472,5 +1472,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 640px) {
-  .owl-tear-section { height: calc(100svh + 90svh); }
+  /* The artwork's viewBox is landscape (928x468), so on a tall phone it
+     renders width-constrained, leaving most of a full-height sticky stage
+     as dead space above/below the content. Shrink the stage to roughly
+     match the rendered content height instead of reserving 100svh. */
+  .owl-tear-sticky { height: 340px; }
+  .owl-tear-section { height: calc(340px + 90svh); }
 }
