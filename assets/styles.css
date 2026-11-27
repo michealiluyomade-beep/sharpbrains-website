@@ -1021,7 +1021,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: relative;
   width: 100%;
   height: 560px;
-  perspective: 1800px;
+  perspective: 2100px;
   touch-action: pan-y;
   cursor: grab;
 }
@@ -1042,10 +1042,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 170px;
-  height: 230px;
-  margin-left: -85px;
-  margin-top: -115px;
+  width: 150px;
+  height: 204px;
+  margin-left: -75px;
+  margin-top: -102px;
   border-radius: 16px;
   overflow: hidden;
   background: #11143A;
@@ -1053,6 +1053,39 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: 0 20px 44px rgba(0,0,0,0.4);
   backface-visibility: hidden;
 }
+
+.circ-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(10,12,38,0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.circ-gallery-arrow:hover,
+.circ-gallery-arrow:focus-visible {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #11143A;
+}
+
+.circ-gallery-arrow:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.circ-gallery-arrow-left { left: 4px; }
+.circ-gallery-arrow-right { right: 4px; }
 
 .circ-gallery-item img {
   width: 100%;
@@ -1101,27 +1134,30 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 980px) {
-  .circ-gallery-stage { height: 420px; perspective: 1300px; }
-  .circ-gallery-item {
-    width: 130px;
-    height: 175px;
-    margin-left: -65px;
-    margin-top: -87px;
-  }
-}
-
-@media (max-width: 640px) {
-  .circ-gallery-stage { height: 320px; perspective: 900px; }
+  .circ-gallery-stage { height: 400px; perspective: 1500px; }
   .circ-gallery-item {
     width: 100px;
     height: 135px;
     margin-left: -50px;
     margin-top: -67px;
-    border-radius: 12px;
   }
-  .circ-gallery-cap { padding: 8px 8px 7px; }
-  .circ-gallery-cap .title { font-size: 11px; }
-  .circ-gallery-cap .tag { font-size: 8px; }
+  .circ-gallery-arrow { width: 38px; height: 38px; }
+}
+
+@media (max-width: 640px) {
+  .circ-gallery-stage { height: 300px; perspective: 1000px; }
+  .circ-gallery-item {
+    width: 62px;
+    height: 84px;
+    margin-left: -31px;
+    margin-top: -42px;
+    border-radius: 10px;
+  }
+  .circ-gallery-cap { padding: 6px 6px 5px; }
+  .circ-gallery-cap .title { font-size: 9px; }
+  .circ-gallery-cap .tag { font-size: 6px; }
+  .circ-gallery-arrow { width: 32px; height: 32px; }
+  .circ-gallery-arrow svg { width: 15px; height: 15px; }
 }
 
 /* ---------- Testimonial 3D marquee ---------- */

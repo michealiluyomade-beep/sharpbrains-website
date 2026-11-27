@@ -262,11 +262,17 @@ def circ_gallery_item(entry):
 def circular_gallery():
     items = "\n      ".join(circ_gallery_item(e) for e in GALLERY_RING)
     return f"""<div class="circ-gallery-stage" data-circ-gallery>
+    <button type="button" class="circ-gallery-arrow circ-gallery-arrow-left" aria-label="Turn gallery left">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
     <div class="circ-gallery-ring">
       {items}
     </div>
+    <button type="button" class="circ-gallery-arrow circ-gallery-arrow-right" aria-label="Turn gallery right">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
   </div>
-  <p class="circ-gallery-hint">Drag, or scroll over the photos, to turn the gallery</p>"""
+  <p class="circ-gallery-hint">Drag, scroll, or use the arrows to turn the gallery</p>"""
 
 home_body = f"""
 <section class="hero">

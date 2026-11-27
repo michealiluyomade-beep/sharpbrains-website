@@ -4,6 +4,14 @@
 (function () {
   "use strict";
 
+  function now() {
+    return (window.performance && performance.now) ? performance.now() : Date.now();
+  }
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
   function initGallery(root) {
     var ring = root.querySelector(".circ-gallery-ring");
     if (!ring) return;
@@ -14,12 +22,14 @@
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var anglePer = 360 / n;
 
+    // Radii are tuned so each card's on-screen chord distance stays a bit
+    // wider than the card itself, leaving a visible gap around the ring.
     var radius = 0;
     function computeRadius() {
       var w = root.clientWidth || window.innerWidth;
-      if (w < 640) { radius = 320; }
-      else if (w < 980) { radius = 520; }
-      else { radius = 760; }
+      if (w < 640) { radius = 380; }
+      else if (w < 980) { radius = 610; }
+      else { radius = 900; }
     }
     computeRadius();
 
@@ -28,6 +38,12 @@
     var lastX = 0;
     var velocity = 0;
     var autoSpeed = reduceMotion ? 0 : 0.045;
+
+    var stepAnimating = false;
+    var stepFrom = 0;
+    var stepTo = 0;
+    var stepStart = 0;
+    var stepDuration = 420;
 
     function layout() {
       for (var i = 0; i < n; i++) {
@@ -41,10 +57,26 @@
       ring.style.transform = "rotateY(" + rotation + "deg)";
     }
 
+    function startStep(delta) {
+      stepFrom = rotation;
+      stepTo = rotation + delta;
+      stepStart = now();
+      stepAnimating = true;
+      velocity = 0;
+    }
+
     var raf = null;
     var visible = true;
 
     function tick() {
+      if (stepAnimating) {
+        var t = Math.min(1, (now() - stepStart) / stepDuration);
+        rotation = stepFrom + (stepTo - stepFrom) * easeOutCubic(t);
+        layout();
+        if (t >= 1) stepAnimating = false;
+        raf = requestAnimationFrame(tick);
+        return;
+      }
       if (!dragging && visible) {
         rotation += autoSpeed + velocity;
         velocity *= 0.92;
@@ -62,6 +94,8 @@
     }
 
     root.addEventListener("pointerdown", function (e) {
+      if (e.target.closest && e.target.closest(".circ-gallery-arrow")) return;
+      stepAnimating = false;
       dragging = true;
       lastX = e.clientX;
       velocity = 0;
@@ -87,10 +121,20 @@
 
     root.addEventListener("wheel", function (e) {
       e.preventDefault();
+      stepAnimating = false;
       rotation += e.deltaY * 0.08;
       velocity = 0;
       layout();
     }, { passive: false });
+
+    var leftArrow = root.querySelector(".circ-gallery-arrow-left");
+    var rightArrow = root.querySelector(".circ-gallery-arrow-right");
+    if (leftArrow) {
+      leftArrow.addEventListener("click", function () { startStep(-anglePer); });
+    }
+    if (rightArrow) {
+      rightArrow.addEventListener("click", function () { startStep(anglePer); });
+    }
 
     window.addEventListener("resize", function () {
       computeRadius();
@@ -98,22 +142,7 @@
     });
 
     layout();
-    if (reduceMotion) {
-      // Still allow drag/wheel interaction, just no idle auto-rotation.
-      raf = requestAnimationFrame(function tickStill() {
-        if (dragging === false && velocity === 0) {
-          raf = requestAnimationFrame(tickStill);
-          return;
-        }
-        rotation += velocity;
-        velocity *= 0.92;
-        if (Math.abs(velocity) < 0.001) velocity = 0;
-        layout();
-        raf = requestAnimationFrame(tickStill);
-      });
-    } else {
-      raf = requestAnimationFrame(tick);
-    }
+    raf = requestAnimationFrame(tick);
   }
 
   function boot() {
