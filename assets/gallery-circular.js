@@ -27,8 +27,8 @@
     var radius = 0;
     function computeRadius() {
       var w = root.clientWidth || window.innerWidth;
-      if (w < 640) { radius = 380; }
-      else if (w < 980) { radius = 610; }
+      if (w < 640) { radius = 547; }
+      else if (w < 980) { radius = 715; }
       else { radius = 900; }
     }
     computeRadius();
@@ -118,14 +118,6 @@
     root.addEventListener("pointerup", endDrag);
     root.addEventListener("pointercancel", endDrag);
     root.addEventListener("pointerleave", endDrag);
-
-    root.addEventListener("wheel", function (e) {
-      e.preventDefault();
-      stepAnimating = false;
-      rotation += e.deltaY * 0.08;
-      velocity = 0;
-      layout();
-    }, { passive: false });
 
     var leftArrow = root.querySelector(".circ-gallery-arrow-left");
     var rightArrow = root.querySelector(".circ-gallery-arrow-right");

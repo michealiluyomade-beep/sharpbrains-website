@@ -272,7 +272,7 @@ def circular_gallery():
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </button>
   </div>
-  <p class="circ-gallery-hint">Drag, scroll, or use the arrows to turn the gallery</p>"""
+  <p class="circ-gallery-hint">Drag the photos, or use the arrows, to turn the gallery</p>"""
 
 home_body = f"""
 <section class="hero">

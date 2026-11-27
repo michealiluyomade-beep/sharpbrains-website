@@ -1138,30 +1138,30 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 980px) {
-  .circ-gallery-stage { height: 400px; perspective: 1500px; }
+  .circ-gallery-stage { height: 460px; perspective: 1750px; }
   .circ-gallery-item {
-    width: 100px;
-    height: 135px;
-    margin-left: -50px;
-    margin-top: -67px;
+    width: 120px;
+    height: 162px;
+    margin-left: -60px;
+    margin-top: -81px;
   }
-  .circ-gallery-arrow { width: 38px; height: 38px; }
+  .circ-gallery-arrow { width: 40px; height: 40px; }
 }
 
 @media (max-width: 640px) {
-  .circ-gallery-stage { height: 300px; perspective: 1000px; }
+  .circ-gallery-stage { height: 360px; perspective: 1450px; }
   .circ-gallery-item {
-    width: 62px;
-    height: 84px;
-    margin-left: -31px;
-    margin-top: -42px;
-    border-radius: 10px;
+    width: 90px;
+    height: 122px;
+    margin-left: -45px;
+    margin-top: -61px;
+    border-radius: 12px;
   }
-  .circ-gallery-cap { padding: 6px 6px 5px; }
-  .circ-gallery-cap .title { font-size: 9px; }
-  .circ-gallery-cap .ring-tag { font-size: 6px; }
-  .circ-gallery-arrow { width: 32px; height: 32px; }
-  .circ-gallery-arrow svg { width: 15px; height: 15px; }
+  .circ-gallery-cap { padding: 8px 8px 7px; }
+  .circ-gallery-cap .title { font-size: 11px; }
+  .circ-gallery-cap .ring-tag { font-size: 8px; }
+  .circ-gallery-arrow { width: 36px; height: 36px; }
+  .circ-gallery-arrow svg { width: 17px; height: 17px; }
 }
 
 /* ---------- Testimonial 3D marquee ---------- */
