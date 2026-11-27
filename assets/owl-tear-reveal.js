@@ -283,7 +283,7 @@
     stage.addEventListener("pointerleave", function () { pointer = null; });
     stage.addEventListener("pointerdown", function () { if (lastPop > 0.5) squintAt = performance.now(); });
 
-    var p = 0, look = [0, 0], idle = [0, 0], nextIdle = 0, nextBlink = performance.now() + 2500;
+    var p = 0, peakP = 0, look = [0, 0], idle = [0, 0], nextIdle = 0, nextBlink = performance.now() + 2500;
     var lastPop = 0;
     var visible = true;
     var raf = 0;
@@ -299,10 +299,15 @@
       if (!visible) return;
       var target = scrollProgress(root.getBoundingClientRect().top, root.offsetHeight, stage.offsetHeight);
       // Track the scroll position directly (no easing lag) so a fast swipe
-      // through a short section still lands on the exact right frame -
-      // the owl should always finish opening by the time you've scrolled
-      // past it, never get left mid-reveal.
-      p = reduced ? (target > 0.3 ? 1 : 0) : target;
+      // through a short section still lands on the exact right frame - the
+      // owl should always finish opening by the time you've scrolled past
+      // it, never get left mid-reveal. We also only ever ratchet forward:
+      // whichever direction you scroll, reaching a point once keeps the
+      // owl open from then on - it doesn't reseal if you scroll back up a
+      // little (only resets if you leave the section above it entirely).
+      peakP = Math.max(peakP, target);
+      if (target <= 0) peakP = 0;
+      p = reduced ? (target > 0.3 ? 1 : 0) : peakP;
 
       var want;
       if (pointer) {
