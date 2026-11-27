@@ -215,6 +215,59 @@ def testimonial_marquee():
     </div>
   </div>"""
 
+# (path, title, tag, alt) - every real campus photo, shown in the circular gallery ring
+GALLERY_RING = [
+    ("assets/gallery/trip-01-museum-group.jpg", "Museum Visit", "Field Trip", "Sharp Brains pupils on a museum excursion"),
+    ("assets/gallery/trip-02-horse-ride.jpg", "Horseback Ride", "Field Trip", "Sharp Brains pupil on a horseback ride excursion"),
+    ("assets/gallery/trip-03-badagry-gate.jpg", "Badagry Heritage Gate", "Field Trip", "Sharp Brains pupils on an educational excursion to Badagry"),
+    ("assets/gallery/trip-04-baracoon-group.jpg", "Badagry Baracoon", "Field Trip", "Sharp Brains pupils visiting the Badagry baracoon"),
+    ("assets/gallery/trip-05-beach-group.jpg", "Beach Excursion", "Field Trip", "Sharp Brains pupils on a beach excursion"),
+    ("assets/gallery/trip-06-aquarium-visit.jpg", "Aquarium Visit", "Field Trip", "Sharp Brains pupils on an aquarium visit"),
+    ("assets/gallery/trip-07-indoor-group.jpg", "Primary Excursion", "Field Trip", "Sharp Brains Primary pupils on an excursion"),
+    ("assets/gallery/trip-08-bamboo-forest-a.jpg", "Bamboo Forest Walk", "Field Trip", "Sharp Brains pupils walking through a bamboo forest"),
+    ("assets/gallery/trip-08-bamboo-forest-b.jpg", "Bamboo Forest Walk", "Field Trip", "Sharp Brains pupils walking through a bamboo forest"),
+    ("assets/gallery/trip-09-pond-lineup.jpg", "Nature Walk", "Field Trip", "Sharp Brains pupils on a nature walk"),
+    ("assets/gallery/trip-10-badagry-monument.jpg", "Badagry Monument", "Field Trip", "Sharp Brains pupils at a Badagry monument"),
+    ("assets/gallery/trip-11-horse-ride-b.jpg", "Horseback Ride", "Field Trip", "Sharp Brains pupil on a horseback ride excursion"),
+    ("assets/gallery/trip-12-horse-ride-c.jpg", "Horseback Ride", "Field Trip", "Sharp Brains pupil on a horseback ride excursion"),
+    ("assets/gallery/trip-13-horse-ride-d.jpg", "Horseback Ride", "Field Trip", "Sharp Brains pupil on a horseback ride excursion"),
+    ("assets/gallery/trip-14-boat-ride-a.jpg", "Boat Ride Excursion", "Field Trip", "Sharp Brains pupils on a boat ride excursion"),
+    ("assets/gallery/trip-15-boat-ride-b.jpg", "Boat Ride Excursion", "Field Trip", "Sharp Brains pupils on a boat ride excursion"),
+    ("assets/gallery/trip-16-boat-ride-c.jpg", "Boat Ride Excursion", "Field Trip", "Sharp Brains pupils on a boat ride excursion"),
+    ("assets/gallery/event-democracy-day-1.jpg", "Democracy Day", "School Event", "Sharp Brains Democracy Day celebration"),
+    ("assets/gallery/event-democracy-day-2.jpg", "Democracy Day", "School Event", "Sharp Brains Democracy Day celebration"),
+    ("assets/gallery/event-democracy-day-3.jpg", "Democracy Day", "School Event", "Sharp Brains Democracy Day celebration"),
+    ("assets/gallery/culture-01-group-gate.jpg", "Cultural Day", "Culture Day", "Sharp Brains pupils on Cultural Day"),
+    ("assets/gallery/culture-02-four-girls.jpg", "Cultural Day", "Culture Day", "Sharp Brains pupils on Cultural Day"),
+    ("assets/gallery/culture-03-studio-girl.jpg", "Cultural Day", "Culture Day", "Sharp Brains pupil on Cultural Day"),
+    ("assets/gallery/culture-04-group-indoor.jpg", "Cultural Day", "Culture Day", "Sharp Brains pupils on Cultural Day"),
+    ("assets/gallery/culture-05-dance.jpg", "Cultural Day Dance", "Culture Day", "Sharp Brains pupils dancing on Cultural Day"),
+    ("assets/gallery/grad-01-boys-native.jpg", "Graduation Day", "Secondary", "Sharp Brains graduation day"),
+    ("assets/gallery/grad-02-girl-sash.jpg", "Graduation Day", "Secondary", "Sharp Brains graduate in sash"),
+    ("assets/gallery/grad-03-boys-group.jpg", "Graduation Day", "Secondary", "Sharp Brains graduation day"),
+    ("assets/gallery/grad-04-girls-purple.jpg", "Graduation Day", "Secondary", "Sharp Brains graduation day"),
+    ("assets/gallery/sports-01-pool.jpg", "Swimming", "Sports", "Sharp Brains pupils at the pool"),
+    ("assets/gallery/sports-02-house-trophy.jpg", "House Trophy", "Sports", "Sharp Brains pupils with a house sports trophy"),
+    ("assets/gallery/staff-01-gallery-visit.jpg", "Staff Outing", "Our Team", "Sharp Brains staff on an outing"),
+    ("assets/gallery/staff-02-beach.jpg", "Staff Outing", "Our Team", "Sharp Brains staff on a beach outing"),
+]
+
+def circ_gallery_item(entry):
+    path, title, tag, alt = entry
+    return f"""<div class="circ-gallery-item">
+        <img src="{path}" alt="{alt}" loading="lazy">
+        <div class="circ-gallery-cap"><span class="tag">{tag}</span><span class="title">{title}</span></div>
+      </div>"""
+
+def circular_gallery():
+    items = "\n      ".join(circ_gallery_item(e) for e in GALLERY_RING)
+    return f"""<div class="circ-gallery-stage" data-circ-gallery>
+    <div class="circ-gallery-ring">
+      {items}
+    </div>
+  </div>
+  <p class="circ-gallery-hint">Drag, or scroll over the photos, to turn the gallery</p>"""
+
 home_body = f"""
 <section class="hero">
   <div class="hero-aura hero-aura-a"></div>
@@ -401,41 +454,10 @@ home_body = f"""
   <div class="container" style="padding-top:64px;padding-bottom:24px;">
     <span class="eyebrow-dark" style="color:var(--amber);">(05) GALLERY PREVIEW</span>
     <h2 style="color:#fff;font-size:32px;font-weight:800;padding-top:12px;">Life at Sharp Brains, in Motion</h2>
-    <p style="color:#9BA3C9;max-width:560px;padding-top:10px;font-size:15px;">A running look at campus life, straight from our own photos. Hover a panel to open it up.</p>
+    <p style="color:#9BA3C9;max-width:560px;padding-top:10px;font-size:15px;">Every photo we have of campus life, in one turning gallery.</p>
   </div>
-  <div class="container">
-    <div class="gallery-elastic">
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/culture-01-group-gate.jpg" alt="Sharp Brains pupils on Cultural Day">
-        <span class="gallery-elastic-cap"><span>Cultural Day</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/sports-01-pool.jpg" alt="Sharp Brains pupils at the pool">
-        <span class="gallery-elastic-cap"><span>Sports &amp; Swimming</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/grad-03-boys-group.jpg" alt="Sharp Brains graduation day">
-        <span class="gallery-elastic-cap"><span>Graduation Day</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/event-democracy-day-2.jpg" alt="Sharp Brains Democracy Day event">
-        <span class="gallery-elastic-cap"><span>Democracy Day</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/trip-14-boat-ride-a.jpg" alt="Sharp Brains pupils on a boat ride excursion">
-        <span class="gallery-elastic-cap"><span>Excursions</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/trip-03-badagry-gate.jpg" alt="Sharp Brains pupils on an educational excursion">
-        <span class="gallery-elastic-cap"><span>Field Trips</span></span>
-      </a>
-      <a href="gallery.html" class="gallery-elastic-item">
-        <img src="assets/gallery/grad-02-girl-sash.jpg" alt="Sharp Brains graduate in sash">
-        <span class="gallery-elastic-cap"><span>Our Graduates</span></span>
-      </a>
-    </div>
-  </div>
-  <div style="text-align:center;padding:40px 24px 72px;">
+  {circular_gallery()}
+  <div style="text-align:center;padding:16px 24px 72px;">
     <a href="gallery.html" class="btn btn-amber">View Full Gallery</a>
   </div>
 </section>
@@ -451,6 +473,7 @@ home_body = f"""
 
 HOME_EXTRA_SCRIPTS = """
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="assets/gallery-circular.js"></script>
 <script src="assets/owl-tear-reveal.js"></script>
 <script src="assets/day-timeline.js"></script>
 <script src="assets/tilt-3d.js"></script>
