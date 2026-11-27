@@ -1015,61 +1015,83 @@ ul { margin: 0; padding: 0; list-style: none; }
   .endless-root { height: 420px; }
 }
 
-/* ---------- Bento gallery preview ---------- */
+/* ---------- Elastic gallery preview (hover-expand accordion) ---------- */
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 160px;
-  gap: 12px;
+.gallery-elastic {
+  display: flex;
+  gap: 8px;
+  height: 460px;
   padding: 32px 0 8px;
 }
 
-.bento-item {
+.gallery-elastic-item {
   position: relative;
   display: block;
-  border-radius: 14px;
+  flex: 1 1 0%;
+  min-width: 44px;
+  border-radius: 18px;
   overflow: hidden;
   background: #11143A;
+  transition: flex 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.bento-item.big { grid-column: span 2; grid-row: span 2; }
-.bento-item.wide { grid-column: span 2; }
+.gallery-elastic-item:hover,
+.gallery-elastic-item:focus-visible {
+  flex: 5 1 0%;
+}
 
-.bento-item img {
+.gallery-elastic-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
 
-.bento-item:hover img { transform: scale(1.06); }
-
-.bento-overlay {
+.gallery-elastic-cap {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: flex-end;
-  padding: 14px;
-  background: linear-gradient(to top, rgba(10,12,38,0.75), rgba(10,12,38,0) 55%);
+  padding: 20px 18px;
+  background: linear-gradient(to top, rgba(10,12,38,0.88), rgba(10,12,38,0) 55%);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.bento-item:hover .bento-overlay { opacity: 1; }
+.gallery-elastic-item:hover .gallery-elastic-cap,
+.gallery-elastic-item:focus-visible .gallery-elastic-cap {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.bento-overlay span {
+.gallery-elastic-cap span {
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 @media (max-width: 760px) {
-  .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
-  .bento-item.big { grid-column: span 2; grid-row: span 1; }
-  .bento-item.wide { grid-column: span 2; }
+  .gallery-elastic {
+    height: 280px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-elastic-item {
+    flex: 0 0 68%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .gallery-elastic-item:hover,
+  .gallery-elastic-item:focus-visible { flex: 0 0 68%; }
+  .gallery-elastic-cap {
+    opacity: 1;
+    transform: none;
+    background: linear-gradient(to top, rgba(10,12,38,0.88), rgba(10,12,38,0) 65%);
+  }
 }
 
 /* ---------- Testimonial 3D marquee ---------- */
