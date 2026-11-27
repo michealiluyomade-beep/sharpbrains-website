@@ -298,8 +298,11 @@
       raf = 0;
       if (!visible) return;
       var target = scrollProgress(root.getBoundingClientRect().top, root.offsetHeight, stage.offsetHeight);
-      p = reduced ? (target > 0.3 ? 1 : 0) : p + (target - p) * 0.14;
-      if (Math.abs(target - p) < 0.0005) p = target;
+      // Track the scroll position directly (no easing lag) so a fast swipe
+      // through a short section still lands on the exact right frame -
+      // the owl should always finish opening by the time you've scrolled
+      // past it, never get left mid-reveal.
+      p = reduced ? (target > 0.3 ? 1 : 0) : target;
 
       var want;
       if (pointer) {

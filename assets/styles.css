@@ -1477,5 +1477,5 @@ ul { margin: 0; padding: 0; list-style: none; }
      as dead space above/below the content. Shrink the stage to roughly
      match the rendered content height instead of reserving 100svh. */
   .owl-tear-sticky { height: 340px; }
-  .owl-tear-section { height: calc(340px + 30svh); }
+  .owl-tear-section { height: calc(340px + 16svh); }
 }
