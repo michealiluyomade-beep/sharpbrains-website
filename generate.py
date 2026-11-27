@@ -256,7 +256,7 @@ def circ_gallery_item(entry):
     path, title, tag, alt = entry
     return f"""<div class="circ-gallery-item">
         <img src="{path}" alt="{alt}" loading="lazy">
-        <div class="circ-gallery-cap"><span class="tag">{tag}</span><span class="title">{title}</span></div>
+        <div class="circ-gallery-cap"><span class="ring-tag">{tag}</span><span class="title">{title}</span></div>
       </div>"""
 
 def circular_gallery():
