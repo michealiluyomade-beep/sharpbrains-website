@@ -199,6 +199,12 @@ def testi_column(indices, direction, duration):
       </div>
     </div>"""
 
+def testimonial_mobile_list():
+    cards = "\n      ".join(testi_mini_card(t) for t in TESTIMONIALS)
+    return f"""<div class="testi-mobile-list">
+      {cards}
+    </div>"""
+
 def testimonial_marquee():
     return f"""<div class="container">
     <div class="testi-3d-wrap">
@@ -213,6 +219,7 @@ def testimonial_marquee():
       <div class="testi-3d-fade testi-3d-fade-left"></div>
       <div class="testi-3d-fade testi-3d-fade-right"></div>
     </div>
+    {testimonial_mobile_list()}
   </div>"""
 
 # (path, title, tag, alt) - every real campus photo, shown in the circular gallery ring

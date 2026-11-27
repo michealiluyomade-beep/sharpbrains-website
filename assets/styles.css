@@ -1272,6 +1272,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   .testi-3d-fade-left, .testi-3d-fade-right { display: none; }
 }
 
+/* Below ~640px the 3D columns no longer fit without clipping text, so
+   swap in a plain, fully readable stacked list instead. */
+.testi-mobile-list { display: none; }
+
+@media (max-width: 640px) {
+  .testi-3d-wrap { display: none; }
+  .testi-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
 /* ---------- 3D tilt ---------- */
 
 [data-tilt] {
