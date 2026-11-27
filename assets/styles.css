@@ -323,8 +323,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 760px) {
   .stat-band { grid-template-columns: repeat(2, 1fr); }
+  .stat-band-item { padding: 24px 12px; }
+  .stat-band-item .num { font-size: 28px; }
   .stat-band-item:nth-child(2n) { border-right: none; }
   .stat-band-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.14); }
+}
+
+@media (max-width: 560px) {
+  /* Two columns is still too tight for "[1,200]+" at this width - stack instead. */
+  .stat-band { grid-template-columns: 1fr; }
+  .stat-band-item {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+  .stat-band-item:last-child { border-bottom: none; }
 }
 
 .placeholder-block {
