@@ -199,10 +199,29 @@ def testi_column(indices, direction, duration):
       </div>
     </div>"""
 
+def testi_ticker_card(t):
+    return f"""<div class="testi-ticker-card">
+          <div class="testi-mini-head">
+            <span class="testi-mini-avatar" style="background:{t['color']};">{t['initials']}</span>
+            <div><p class="testi-mini-name">{t['name']}</p><p class="testi-mini-role">{t['role']}</p></div>
+          </div>
+          <p class="testi-mini-text">&ldquo;{t['text']}&rdquo;</p>
+        </div>"""
+
+def testi_ticker_row(indices, direction, duration):
+    cards = "\n        ".join(testi_ticker_card(TESTIMONIALS[i]) for i in indices)
+    # Render the set twice back-to-back so the loop (translateX) is seamless.
+    return f"""<div class="testi-ticker-row">
+      <div class="testi-ticker-track testi-ticker-{direction}" style="animation-duration:{duration}s;">
+        {cards}
+        {cards}
+      </div>
+    </div>"""
+
 def testimonial_mobile_list():
-    cards = "\n      ".join(testi_mini_card(t) for t in TESTIMONIALS)
     return f"""<div class="testi-mobile-list">
-      {cards}
+      {testi_ticker_row([0, 1, 2], "right", 34)}
+      {testi_ticker_row([3, 4, 5], "left", 38)}
     </div>"""
 
 def testimonial_marquee():
